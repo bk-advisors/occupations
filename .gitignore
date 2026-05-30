@@ -41,3 +41,11 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# =========================
+# Raw datasets (large, often licensed — derive into the small files we commit)
+# =========================
+apps/africa-causes-of-death-2021/data/raw/*.csv
+apps/africa-causes-of-death-2021/data/raw/*.xlsx
+apps/africa-causes-of-death-2021/data/raw/*.zip
+

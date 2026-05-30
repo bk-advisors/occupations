@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Africa's Causes of Death, 2021 — explorable</title>
+
+    <meta name="description" content="An interactive exploration of every cause of death in the WHO African Region in 2021, drillable by group and broken down by age band. Data: WHO Global Health Estimates 2021." />
+    <meta name="author" content="Matthew Kuch, BK-Advisors" />
+
+    <meta property="og:title" content="Africa's Causes of Death — explorable" />
+    <meta property="og:description" content="139 causes, 47 countries, 5 age bands. WHO Global Health Estimates 2021. By Matthew Kuch / BK-Advisors." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bk-advisors.github.io/africa-causes-of-death-explore/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script defer type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="page">
+
+      <aside class="side">
+        <div class="kicker">Explorable · BK-Advisors</div>
+        <h1>Africa's Causes of Death, 2021</h1>
+        <p class="deck">
+          Every cause of death the WHO tracks in the 47-country African
+          Region. Each rectangle is sized by the number of deaths.
+        </p>
+
+        <!-- Detail panel — always visible, updates on click. -->
+        <div id="detail" class="detail"></div>
+
+        <div class="form-group search">
+          <label for="searchBox" class="label">Find a cause</label>
+          <select id="searchBox">
+            <option value="">Type a cause name…</option>
+          </select>
+        </div>
+
+        <div class="legend">
+          <div class="legend-row">
+            <span class="legend-title">Cause group</span>
+            <span class="swatch" style="background:var(--l1-cmnn)"></span>Communicable, maternal &amp; nutritional
+          </div>
+          <div class="legend-row">
+            <span class="swatch invisible"></span>
+            <span class="swatch" style="background:var(--l1-ncd)"></span>Non-communicable diseases
+          </div>
+          <div class="legend-row">
+            <span class="swatch invisible"></span>
+            <span class="swatch" style="background:var(--l1-injury)"></span>Injuries
+          </div>
+        </div>
+
+        <details class="how">
+          <summary>How to read this</summary>
+          <ul>
+            <li>Rectangle area = number of deaths in 2021.</li>
+            <li>Color = top-level cause group (above).</li>
+            <li>Click any rectangle to drill in.</li>
+            <li>Click the breadcrumb at the top of the chart to zoom out.</li>
+            <li>Search by cause name to jump to one.</li>
+          </ul>
+        </details>
+
+        <div class="story-link">
+          <strong>Looking for the story?</strong>
+          <p>
+            For the narrative version of this data, head to
+            <a href="https://bk-advisors.github.io/africa-causes-of-death/">bk-advisors.github.io/africa-causes-of-death</a>.
+          </p>
+        </div>
+
+        <footer class="colophon">
+          <p>
+            Built by <a href="https://bk-advisors.github.io/">Matthew Kuch</a> ·
+            data <a href="https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-leading-causes-of-death" target="_blank">WHO Global Health Estimates 2021</a> (CC BY-NC-SA 3.0 IGO).
+          </p>
+          <p class="scope-note">
+            Geographic scope: WHO African Region (47 countries). Excludes
+            Egypt, Tunisia, Libya, Morocco, Sudan, Somalia, and Djibouti,
+            which WHO assigns to the Eastern Mediterranean Region.
+          </p>
+        </footer>
+      </aside>
+
+      <main class="chart-pane">
+        <div id="loadText">Loading data…</div>
+        <div id="chart"></div>
+      </main>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+name,ID
+All causes,
+"Communicable, maternal, perinatal and nutritional conditions",1
+Noncommunicable diseases,2
+Injuries,3
+Infectious and parasitic diseases,1.1
+Respiratory Infectious,1.2
+Neonatal conditions,1.3
+Nutritional deficiencies,1.4
+Malignant neoplasms,2.1
+"Endocrine, blood, immune disorders",2.2
+Mental and substance use disorders,2.3
+Neurological conditions,2.4
+Cardiovascular diseases,2.5
+Respiratory diseases,2.6
+Digestive diseases,2.7
+Genitourinary diseases,2.8
+Musculoskeletal diseases,2.9
+Congenital anomalies,2.10
+Unintentional injuries,3.1
+Intentional injuries,3.2
+STDs excluding HIV,1.1.2
+Childhood-cluster diseases,1.1.5
+Hepatitis,1.1.8
+Parasitic and vector diseases,1.1.9
+Intestinal nematode infections,1.1.10
+Mouth and oropharynx cancers,2.1.1
+Liver cancer,2.1.5
+Melanoma and other skin cancers,2.1.8
+"Lymphomas, multiple myeloma",2.1.22
+Drug use disorders,2.3.4
+Stroke,2.5.4
+Cirrhosis of the liver,2.7.2
+Kidney diseases,2.8.1

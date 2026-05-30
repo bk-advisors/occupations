@@ -1,0 +1,273 @@
+/* ──────────────────────────────────────────────────────────────────────────
+   Causes of Death in Africa — design tokens
+   Palette: "Twilight" — dawn → dusk arc, mirroring the life cycle
+   ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Age-band ramp (dawn → midnight) */
+  --age-under5:   #F4D58D;  /* warm gold */
+  --age-5-14:     #E5B25D;  /* ochre */
+  --age-15-49:    #C9483A;  /* terracotta */
+  --age-50-69:    #4E3A6B;  /* indigo */
+  --age-70plus:   #1F1B3A;  /* midnight */
+
+  /* Surfaces */
+  --ground:       #FAF6EE;  /* cream */
+  --ground-deep:  #F1EADC;  /* cream, one shade down */
+  --ink:          #1F1B3A;  /* same as midnight — body text */
+  --ink-muted:    #5C566F;  /* secondary text */
+  --rule:         #D8CFBC;  /* hairlines */
+  --grey:         #8A8378;  /* labels, footnotes */
+
+  /* Hierarchy circles (parent depth ramp) — used only by the explore tool */
+  --depth-0:      #E8DFCB;
+  --depth-1:      #C9BDA1;
+  --depth-2:      #948672;
+  --depth-3:      #5E574A;
+
+  /* L1 cause-group colors — used in the story bar charts */
+  --l1-cmnn:      #C9483A;   /* Communicable, maternal &amp; nutritional — terracotta */
+  --l1-ncd:       #4E3A6B;   /* Non-communicable diseases — indigo */
+  --l1-injury:    #E5B25D;   /* Injuries — ochre */
+
+  /* Type */
+  --font-serif:   "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans:    "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Scale */
+  --measure:      36rem;     /* prose column width */
+  --gutter:       2rem;
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin-top: 1.5em;
+}
+
+p { margin: 0 0 1em; }
+
+a {
+  color: var(--age-15-49);
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.15em;
+}
+a:hover { color: var(--age-70plus); }
+
+strong { font-weight: 600; }
+
+small, .footnote {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.01em;
+}
+
+.label, .ui {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Hero & section layout                                                      */
+/* ────────────────────────────────────────────────────────────────────────── */
+
+.hero {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 2.5rem;
+  text-align: left;
+}
+
+.hero .kicker {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: var(--age-15-49);
+  margin-bottom: 1rem;
+}
+
+.hero .deck {
+  font-size: 1.25rem;
+  color: var(--ink-muted);
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+}
+
+.hero .byline {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--grey);
+}
+
+.prose {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.prose h2 { margin-top: 3rem; }
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Scrolly layout — sticky chart on the left, prose on the right (desktop).   */
+/* On mobile, prose stacks under the chart.                                   */
+/* ────────────────────────────────────────────────────────────────────────── */
+
+.scrolly {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter);
+  padding: 6rem 0;
+}
+
+@media (min-width: 900px) {
+  .scrolly { grid-template-columns: 1.2fr 1fr; }
+}
+
+.scrolly__chart {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 4vh;
+  background: var(--ground);
+  overflow: hidden;
+}
+
+/* The inner slot the chart components render into. Constrain so the figure
+   never overflows the sticky pane vertically. */
+:global(.chart-slot) {
+  width: min(94%, 720px);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+:global(.chart-slot figure) {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+}
+:global(.chart-slot svg) {
+  max-height: 70vh;
+  min-height: 0;
+}
+
+.scrolly__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 70vh;
+  padding: 38vh 1.5rem;
+}
+
+/* Base step styling is intentionally invisible — the chart is the visual
+   feedback for which step is active. Per-step styles overridden in App.svelte. */
+.scrolly__step {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Chart-internal classes (consumed by ChartCirclePack.svelte)                */
+/* ────────────────────────────────────────────────────────────────────────── */
+
+.chart-svg { font-family: var(--font-serif); }
+
+.node--root { fill: var(--depth-0); pointer-events: none; }
+.node--branch { stroke: var(--ground); stroke-width: 0.75; }
+.node--leaf { fill: var(--ground); stroke: var(--rule); stroke-width: 0.5; }
+
+.arc-label {
+  font-family: var(--font-sans);
+  fill: var(--ink);
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+.leaf-label {
+  font-family: var(--font-serif);
+  fill: var(--ink);
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.bar-text {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  fill: var(--ink-muted);
+}
+
+.bar-value {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  fill: var(--ink);
+}
+
+.bar-dim { opacity: 0.18; }
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Footer                                                                    */
+/* ────────────────────────────────────────────────────────────────────────── */
+
+.colophon {
+  border-top: 1px solid var(--rule);
+  margin-top: 4rem;
+  padding: 3rem 1.5rem 6rem;
+  max-width: var(--measure);
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+
+.colophon h3 {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: var(--age-15-49);
+  margin-bottom: 1rem;
+}
+
+.colophon ul { padding-left: 1.25rem; }
+.colophon li { margin-bottom: 0.5em; }

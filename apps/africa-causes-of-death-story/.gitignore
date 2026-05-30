@@ -1,0 +1,7 @@
+node_modules
+dist
+.vite
+.DS_Store
+data/raw/*.csv
+data/raw/*.xlsx
+data/raw/*.zip
