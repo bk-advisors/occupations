@@ -49,3 +49,11 @@ apps/africa-causes-of-death-2021/data/raw/*.csv
 apps/africa-causes-of-death-2021/data/raw/*.xlsx
 apps/africa-causes-of-death-2021/data/raw/*.zip
 
+# =========================
+# Private files (internal notes, agent guidance, scratch)
+# =========================
+CLAUDE.md
+AGENTS.md
+.claude/
+*.private.md
+
