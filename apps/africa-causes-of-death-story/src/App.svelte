@@ -31,17 +31,17 @@
       8.3 million people died across the WHO African Region in 2021.
       Very few died from the conditions that dominate the news.
     </p>
-    <p class="byline">Matthew Kuch · May 2026</p>
+    <p class="byline">Matthew Kuch · June 2026</p>
   </header>
 
   <section class="prose">
     <p class="lede">
-      Two weeks ago, on 15 May, another Ebola outbreak was declared in
+      Over a month ago, on 15 May, another Ebola outbreak was declared in
       Uganda. The pattern that follows is familiar to anyone who lives
-      here. A confirmed case. A press conference. An emergency operations
-      centre stood up. WHO situation reports landing on phones. Schools in
-      affected districts quietly told to delay reopening. It has happened
-      before, and it will happen again.
+      here. A confirmed case. A press conference, then a global media
+      frenzy. An emergency command centre stood up at the health ministry.
+      WHO and Africa CDC teams deployed to support. It has happened
+      before, and it will likely happen again.
     </p>
     <p>
       Since the virus was first identified in 1976, Ebola has cumulatively
@@ -305,7 +305,7 @@
       </li>
       <li>
         Earlier in this series:
-        <a href="https://bk-advisors.github.io/africa-mmr/" target="_blank" rel="noopener">Maternal Mortality in Africa</a>,
+        <a href="https://bk-advisors.github.io/africa-mmr-2030/" target="_blank" rel="noopener">Maternal Mortality in Africa</a>,
         <a href="https://bk-advisors.github.io/africa-measles/" target="_blank" rel="noopener">Measles in Africa</a>,
         <em>Tax Revenue as the key to Sustainable Health Financing</em>
         (LinkedIn, Feb 2026).

@@ -29,7 +29,8 @@
         <h1>Africa's Causes of Death, 2021</h1>
         <p class="deck">
           Every cause of death the WHO tracks in the 47-country African
-          Region. Each rectangle is sized by the number of deaths.
+          Region. Each row is a level of detail, and each block's width is
+          its share of deaths. Click a block to zoom in.
         </p>
 
         <!-- Detail panel — always visible, updates on click. -->
@@ -60,10 +61,11 @@
         <details class="how">
           <summary>How to read this</summary>
           <ul>
-            <li>Rectangle area = number of deaths in 2021.</li>
+            <li>Each row is one level of the cause hierarchy.</li>
+            <li>Block width = number of deaths in 2021.</li>
             <li>Color = top-level cause group (above).</li>
-            <li>Click any rectangle to drill in.</li>
-            <li>Click the breadcrumb at the top of the chart to zoom out.</li>
+            <li>Click a block to zoom into it.</li>
+            <li>Click the top row, the background, or the breadcrumb to zoom out.</li>
             <li>Search by cause name to jump to one.</li>
           </ul>
         </details>

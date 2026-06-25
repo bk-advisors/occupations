@@ -2,15 +2,15 @@
 
 **What 8.3 million deaths in 2021 looked like, by age band**
 
-*Matthew Kuch, May 2026. ~1,800 words. Data: WHO Global Health Estimates 2021 (47-country WHO African Region; excludes North African countries assigned to the Eastern Mediterranean Region).*
+_Matthew Kuch, June 2026. ~1,800 words. Data: WHO Global Health Estimates 2021 (47-country WHO African Region; excludes North African countries assigned to the Eastern Mediterranean Region)._
 
 ---
 
 ## The latest Ebola outbreak
 
-Two weeks ago, on 15 May, another Ebola outbreak was declared in Uganda. The pattern that follows is familiar to anyone who lives here. A confirmed case. A press conference. An emergency operations centre stood up. WHO situation reports landing on phones. Schools in affected districts quietly told to delay reopening. It has happened before, and it will happen again.
+Over a month ago, on 15 May, another Ebola outbreak was declared in Uganda. The pattern that follows is familiar to anyone who lives here. A confirmed case. A press conference then global media frenzy. An emergency command centre setup at MOH. WHO and Africa CDC teams deployed to support the situation. Its all too familiar. It has happened before, and it will likely happen again.
 
-Since the virus was first identified in 1976, Ebola has cumulatively killed around **15,000 people** across every outbreak in every affected country combined. Each individual death is a tragedy. The half-century total, summed across DRC, Uganda, Sierra Leone, Liberia, Guinea and the rest, fits inside a single bad week of malaria mortality on this continent.
+Since the virus was first identified in 1976, Ebola has cumulatively killed around **15,000 people** across every outbreak in every affected country combined. Each individual death is a tragedy of course. However, the half-century total, summed across DRC, Uganda, Sierra Leone, Liberia, Guinea and the rest, fits inside a single bad week of malaria mortality on the African continent.
 
 That contrast got me thinking.
 
@@ -18,7 +18,7 @@ We organise our attention around emergencies, and our health systems follow the 
 
 So I wanted to step back and look at the bigger picture. What do Africa's **8.3 million deaths in 2021** look like when you break them down by cause and by age, separately from the news cycle?
 
-*If you would rather poke at every cause yourself, an [explorable version of this dataset](https://bk-advisors.github.io/africa-causes-of-death-explore/) is here. Same numbers, no narrative. This piece is the narrative.*
+_If you would rather poke at every cause yourself, an [explorable version of this dataset](https://bk-advisors.github.io/africa-causes-of-death-explore/) is here. Same numbers, no narrative. This piece is the narrative._
 
 ## The big picture
 
@@ -30,7 +30,7 @@ The full chart sits in three groups, drawn from the standard WHO/GBD taxonomy:
 
 There is a fourth thing that does not fit any of those neatly: COVID-19. In 2021, COVID killed around **493,000 people** in the WHO African Region, its first and largest year of measurable impact on the continent so far. In the chart, COVID sits under "Respiratory infections" alongside lower respiratory infections.
 
-The three-bucket split is a useful starting point, but it is a half-truth. A death is a death in aggregate. What this picture does not show is *when* in a life each death lands. That, it turns out, is most of what matters.
+The three-bucket split is a useful starting point, but it is a half-truth. A death is a death in aggregate. What this picture does not show is _when_ in a life each death lands. That, it turns out, is most of what matters.
 
 ## The first five years
 
@@ -71,7 +71,7 @@ The older age bands show a different set of causes. The communicable lines mostl
 
 This is the "transition" public-health people talk about. As populations live longer and eat differently and move less, the diseases that killed Western populations through the second half of the 20th century are starting to dominate here. By the time you reach the 70+ band, ischaemic heart disease (208,000 deaths) and the two strokes (haemorrhagic 114,000, ischaemic 148,000) together are responsible for roughly a third of African deaths.
 
-(Two things worth flagging in passing. First, African stroke is *predominantly haemorrhagic*: 321,000 deaths against 206,000 ischaemic, almost the inverse of the Western pattern, and a known marker of poorly-controlled hypertension. Second, COVID-19 stays in the top five right through the 70+ band, killing more than 200,000 older Africans in 2021. It will fade from the picture over time, but in this snapshot it is impossible to look away from.)
+(Two things worth flagging in passing. First, African stroke is _predominantly haemorrhagic_: 321,000 deaths against 206,000 ischaemic, almost the inverse of the Western pattern, and a known marker of poorly-controlled hypertension. Second, COVID-19 stays in the top five right through the 70+ band, killing more than 200,000 older Africans in 2021. It will fade from the picture over time, but in this snapshot it is impossible to look away from.)
 
 The interventions that work for NCDs (blood-pressure medication, statins, basic cancer screening, dialysis, insulin) are not the same interventions that work for communicable diseases. They are, on the whole, more expensive, more chronic, and require more sustained contact with the health system. The health systems being asked to deliver them are the same ones already overstretched trying to deliver bednets, ORS and antiretrovirals to younger cohorts.
 
@@ -118,7 +118,7 @@ Three things, briefly. The same three I keep coming back to.
 
 The next outbreak will come. It will be in the news. The press conferences and emergency operations centres will assemble, as they should. The causes that take far more lives, year after year, will not be in the news. They are on the chart you have just scrolled.
 
-I hope that by the time of the *next* next outbreak, that chart looks different.
+I hope that by the time of the _next_ next outbreak, that chart looks different.
 
 ---
 
@@ -127,10 +127,10 @@ I hope that by the time of the *next* next outbreak, that chart looks different.
 - **Data**: WHO Global Health Estimates 2021, "Deaths by Cause, Age, Sex, by Country and by Region, 2000-2021" (released 2024). Regional sheet for the WHO African Region (47 countries; excludes Egypt, Tunisia, Libya, Morocco, Sudan, Somalia, and Djibouti, which WHO assigns to the Eastern Mediterranean Region). All death counts are point estimates rounded to the nearest thousand. <https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/ghe-leading-causes-of-death>
 - **Licence**: WHO data, CC BY-NC-SA 3.0 IGO.
 - **Cumulative Ebola deaths since 1976**: around 15,000 across all outbreaks combined (CDC / WHO). The single deadliest outbreak (West Africa 2014-16) accounted for about 11,000 of those.
-- **Cost-effectiveness figures** for bednets, EPI, ORS, and skilled birth attendance sourced from *Disease Control Priorities, 3rd edition* (DCP3); World Bank Group, 2017-2018.
+- **Cost-effectiveness figures** for bednets, EPI, ORS, and skilled birth attendance sourced from _Disease Control Priorities, 3rd edition_ (DCP3); World Bank Group, 2017-2018.
 - **SDG 3.1**: the global commitment to fewer than 70 maternal deaths per 100,000 live births by 2030. As of 2023, only four African countries (Cabo Verde, Seychelles, Algeria and Mauritius) meet that bar.
 - **A note on COVID-19**: 2021 was the largest year of measurable COVID mortality in the WHO African Region. The 493,000 figure is WHO's official estimate; some independent excess-mortality studies put the true 2020-2022 toll higher.
 - **Earlier in this series**:
-  - *Maternal Mortality in Africa*: <https://bk-advisors.github.io/africa-mmr/>
-  - *Measles in Africa*: <https://bk-advisors.github.io/africa-measles/>
-  - *Tax Revenue as the key to Sustainable Health Financing* (LinkedIn, Feb 2026)
+  - _Maternal Mortality in Africa_: <https://bk-advisors.github.io/africa-mmr-2030/>
+  - _Measles in Africa_: <https://bk-advisors.github.io/africa-measles/>
+  - _Tax Revenue as the key to Sustainable Health Financing_ ([LinkedIn, Feb 2026](https://www.linkedin.com/pulse/tax-revenue-lifeblood-sustainable-health-financing-matthew-kuch-w2q6f))
