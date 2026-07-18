@@ -9,7 +9,9 @@ causes do most of the killing.
 
 Prefer to poke at the numbers yourself? There is an
 [explorable version](https://bk-advisors.github.io/africa-causes-of-death-explore/)
-with the same data and no narrative.
+with the same data and no narrative. Prefer to watch and listen? There is a
+[nine-minute narrated film](https://bk-advisors.github.io/africa-causes-of-death-film/)
+where every dot is 1,000 people.
 
 ## What it is
 

@@ -7,7 +7,9 @@ Region in 2021, drillable by cause group and broken down by age band.
 
 This is the explorable companion to the narrative data story,
 [Causes of Death in Africa](https://bk-advisors.github.io/africa-causes-of-death/).
-Same numbers, no narrative.
+Same numbers, no narrative. There is also a
+[nine-minute narrated film](https://bk-advisors.github.io/africa-causes-of-death-film/)
+of the same data, where every dot is 1,000 people.
 
 ## What it is
 

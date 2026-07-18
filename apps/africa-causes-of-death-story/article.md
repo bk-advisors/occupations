@@ -18,7 +18,7 @@ We organise our attention around emergencies, and our health systems follow the 
 
 So I wanted to step back and look at the bigger picture. What do Africa's **8.3 million deaths in 2021** look like when you break them down by cause and by age, separately from the news cycle?
 
-_If you would rather poke at every cause yourself, an [explorable version of this dataset](https://bk-advisors.github.io/africa-causes-of-death-explore/) is here. Same numbers, no narrative. This piece is the narrative._
+_If you would rather poke at every cause yourself, an [explorable version of this dataset](https://bk-advisors.github.io/africa-causes-of-death-explore/) is here. Same numbers, no narrative. If you would rather sit back, there is a [narrated film version](https://bk-advisors.github.io/africa-causes-of-death-film/): nine minutes, every dot 1,000 people. This piece is the written narrative._
 
 ## The big picture
 

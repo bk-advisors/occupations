@@ -67,7 +67,10 @@
     <p class="cta">
       If you would rather poke at every cause yourself, an
       <a href="https://bk-advisors.github.io/africa-causes-of-death-explore/" target="_blank">explorable version of this dataset</a>
-      is here. Same numbers, no narrative. This piece is the narrative.
+      is here. Same numbers, no narrative. And if you would rather sit back,
+      there is now a
+      <a href="https://bk-advisors.github.io/africa-causes-of-death-film/" target="_blank">narrated film version</a>:
+      nine minutes, every dot 1,000 people. This piece is the written narrative.
     </p>
   </section>
 
@@ -271,6 +274,12 @@
       <em>Want to look at the numbers yourself?</em>
       <a href="https://bk-advisors.github.io/africa-causes-of-death-explore/" target="_blank">
         Explore the full WHO GHE 2021 dataset →
+      </a>
+    </p>
+    <p>
+      <em>Prefer to watch and listen?</em>
+      <a href="https://bk-advisors.github.io/africa-causes-of-death-film/" target="_blank">
+        Watch the nine-minute narrated film →
       </a>
     </p>
   </section>
