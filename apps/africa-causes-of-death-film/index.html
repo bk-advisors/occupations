@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8.3 Million: Causes of Death in Africa, 2021</title>
+  <meta name="description" content="An interactive data film on what 8.3 million deaths in Africa in 2021 looked like, by cause and by age. WHO Global Health Estimates 2021." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="film">
+    <canvas id="stage"></canvas>
+
+    <!-- Title screen -->
+    <div id="titleScreen">
+      <div class="title-inner">
+        <p class="title-kicker">A data film &middot; WHO Global Health Estimates 2021</p>
+        <h1>8.3 Million</h1>
+        <p class="title-dek">Causes of death in Africa in 2021, by cause and by age.<br />Each dot you will see is 1,000 people.</p>
+        <button id="beginBtn">&#9654;&#xFE0E;&nbsp; Begin</button>
+        <p class="title-note">About nine minutes, narrated. You can pause at any point and hover the charts to explore the numbers yourself. Best on a laptop or larger screen, with sound.</p>
+        <p class="title-links">
+          Prefer to read? <a href="https://bk-advisors.github.io/africa-causes-of-death/" target="_blank" rel="noopener">The written story</a>
+          &middot; Prefer to poke at the data? <a href="https://bk-advisors.github.io/africa-causes-of-death-explore/" target="_blank" rel="noopener">The explorable</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- End card -->
+    <div id="endCard" hidden>
+      <div class="end-inner">
+        <p class="title-kicker">8.3 Million &middot; Causes of Death in Africa, 2021</p>
+        <h2>I hope that by the time of the <em>next</em> next outbreak, these charts look different.</h2>
+        <p class="end-credits">
+          Written and built by Matthew Kuch.<br />
+          Data: WHO Global Health Estimates 2021, WHO African Region (47 countries;
+          excludes North African countries assigned to the Eastern Mediterranean Region).
+          Death counts are point estimates; each dot is 1,000 deaths.
+        </p>
+        <p class="end-links">
+          <a href="https://bk-advisors.github.io/africa-causes-of-death/" target="_blank" rel="noopener">Read the full written story</a>
+          &middot; <a href="https://bk-advisors.github.io/africa-causes-of-death-explore/" target="_blank" rel="noopener">Explore every cause yourself</a>
+        </p>
+        <button id="replayBtn">&#8634;&nbsp; Watch again</button>
+      </div>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud">
+      <div id="chapterTag"></div>
+      <div id="keyTag" hidden><span class="key-dot"></span> = 1,000 deaths</div>
+      <div id="hintTag" hidden>Press space to pause at any point. Hovering a paused chart shows exact numbers.</div>
+      <div id="caption"></div>
+      <div id="explorePanel" hidden>
+        <span id="explorePrompt"></span>
+        <button id="continueBtn">Continue &#9654;&#xFE0E;</button>
+      </div>
+      <div id="tooltip" hidden></div>
+    </div>
+
+    <!-- Controls -->
+    <div id="controls" hidden>
+      <button id="playBtn" title="Play / pause (space)">&#9654;&#xFE0E;</button>
+      <span id="timeNow">0:00</span>
+      <div id="scrubber"><div id="scrubTrack"><div id="scrubFill"></div></div><div id="scrubChapters"></div></div>
+      <span id="timeTotal">0:00</span>
+      <button id="muteBtn" title="Mute / unmute (m)">&#9835;</button>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

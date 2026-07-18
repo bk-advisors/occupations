@@ -49,6 +49,9 @@ apps/africa-causes-of-death-2021/data/raw/*.csv
 apps/africa-causes-of-death-2021/data/raw/*.xlsx
 apps/africa-causes-of-death-2021/data/raw/*.zip
 
+# Narration source recordings (large; the film ships only the per-line mp3 clips in audio/)
+apps/africa-causes-of-death-film/narration/raw/
+
 # =========================
 # Private files (internal notes, agent guidance, scratch)
 # =========================
