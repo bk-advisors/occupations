@@ -84,8 +84,12 @@ const ui = {
 
 const engine = new Engine({ canvas, pool, ui, score });
 
+// Dev: ?t=SECONDS jumps straight to a film time, paused, silent, on the
+// authored (unstretched) timeline — for screenshotting scenes.
+const DEBUG_T = new URLSearchParams(location.search).get("t");
+
 const script = buildScript();
-const narrationDurations = await narration.load(script.captions.length);
+const narrationDurations = DEBUG_T == null ? await narration.load(script.captions.length) : null;
 if (narrationDurations) {
   stretchScript(script, narrationDurations);
   narration.onVoiceActive = (on) => score.voiceDuck(on);
@@ -213,3 +217,11 @@ window.addEventListener("pointermove", pokeControls);
 pokeControls();
 
 window.addEventListener("resize", () => engine.resize());
+
+if (DEBUG_T != null) {
+  $("titleScreen").hidden = true;
+  $("titleScreen").style.display = "none"; // #titleScreen's display:flex beats [hidden]
+  $("controls").hidden = false;
+  engine.started = true;
+  engine.seek(parseFloat(DEBUG_T) || 0);
+}

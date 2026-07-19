@@ -20,8 +20,10 @@ const SHORT = {
   "Trachea, bronchus, lung cancers": "Lung cancers",
   "Protein-energy malnutrition": "Malnutrition",
   "Neonatal sepsis and infections": "Neonatal sepsis",
+  "Self-harm": "Suicide (self-harm)",
 };
 const short = (n) => SHORT[n] || n;
+const clamp01 = (x) => Math.max(0, Math.min(1, x));
 
 function rowsFromTop(list, band) {
   const bandTotal = band ? D.totalByAge[band] : D.totalDeaths;
@@ -87,18 +89,18 @@ export function buildScript() {
   // == Chapter 1: The outbreak (0:00) =====================================
   chapter(0, "The outbreak", { root: 110, chord: [0, 3, 7, 10], cutoff: 420, level: 0.8 });
 
-  cap(0.8, 5.2, "Two months ago, another Ebola outbreak was declared in Uganda.");
+  cap(0.8, 5.2, "Two months ago, Uganda declared another Ebola outbreak.");
   beat(1.2, (api) => {
     api.form({ select: (d) => d.i < 15, place: ebolaCluster(false).place, duration: 2.6, stagger: 2.0 });
   });
-  cap(6.6, 5.4, "A confirmed case. A press conference. An emergency command centre. Global headlines.");
+  cap(6.6, 5.8, "One confirmed case was enough to set everything in motion: a press conference, an emergency command centre, and headlines around the world.");
   cap(12.6, 4.6, "It has happened before, and it will happen again.");
   beat(17.4, (api) => {
     const ebola = ebolaCluster(true);
     api.form({ select: (d) => d.i < 15, place: ebola.place, duration: 0.5 });
     api.overlay(ebola);
   });
-  cap(17.8, 6.4, "Since 1976, Ebola has killed about <strong>15,000 people</strong>: every outbreak, every affected country, combined.");
+  cap(17.8, 7.2, "Here is a number that might surprise you. Since 1976, Ebola has killed about <strong>15,000 people</strong>. That accounts for every outbreak, in every country, over almost fifty years.");
   beat(25.2, (api) => {
     const ebola = ebolaCluster(true);
     const week = L.cluster({
@@ -111,9 +113,9 @@ export function buildScript() {
     api.overlay(week);
     api.formMore({ select: (d) => d.i >= 20 && d.i < 32, place: week.place, duration: 2.0, stagger: 1.2 });
   });
-  cap(25.6, 6.6, "That half-century total fits inside a <strong>single bad week of malaria</strong> on this continent.");
+  cap(25.6, 7.2, "Now let's look at malaria. In <strong>one bad week</strong>, malaria kills about the same number of people in Africa, and most of them are children.");
   cap(33.2, 4.2, "That contrast got me thinking.");
-  cap(38.2, 6.6, "We organise our attention around emergencies. The causes that do most of the killing are almost never in the news.");
+  cap(38.2, 7.4, "Emergencies like Ebola grab our attention, rightly so. However, the causes that quietly do most of the killing almost never make the news and are not as visible.");
 
   // == Chapter 2: 8.3 million (0:46) ======================================
   chapter(46, "8.3 million", { root: 87.31, chord: [0, 7, 12, 16], cutoff: 700, level: 1 });
@@ -138,17 +140,17 @@ export function buildScript() {
       ctx.globalAlpha = 1;
     });
   });
-  cap(46.5, 7, "In 2021, <strong>8.3 million people</strong> died in the WHO African Region, of everything, at every age.");
-  cap(54.5, 5, "Each dot on this screen is 1,000 of them. This is all of them at once.");
+  cap(46.5, 7, "In 2021, <strong>8.3 million people</strong> died in the WHO African Region. That is every death, from every cause, at every age.");
+  cap(54.5, 5.8, "Every dot on this screen stands for 1,000 people. You are looking at all 8.3 million of them at once.");
   beat(61, (api) => {
     const t = L.towers({ groups: L1_GROUPS(), keyFn: (d) => d.l1 });
     api.form({ select: () => true, place: t.place, duration: 2.4, stagger: 2.2 });
     api.overlay(t);
   });
-  cap(61.5, 4.5, "Global health sorts these deaths into three big groups.");
-  cap(66.5, 7.5, "<strong>Communicable, maternal, perinatal and nutritional conditions</strong>, the diseases of poverty: 4.6 million deaths. More than half of everything.");
-  cap(74.5, 6, "<strong>Non-communicable diseases</strong>, meaning heart disease, cancer, diabetes, stroke: 2.9 million.");
-  cap(81, 5.5, "<strong>Injuries</strong>, from road crashes to drowning to violence: 770,000.");
+  cap(61.5, 4.5, "Health experts sort all these deaths into three big groups.");
+  cap(66.5, 7.9, "The first group is infections, plus deaths linked to pregnancy, childbirth and poor nutrition. Doctors call these <strong>communicable, maternal, perinatal and nutritional conditions</strong>. These are the diseases of poverty, and they took 4.6 million lives. That is more than half of the total.");
+  cap(74.5, 6.4, "The second group is <strong>non-communicable diseases</strong>, the ones you cannot catch from another person: heart disease, cancer, diabetes, stroke. They took 2.9 million lives.");
+  cap(81, 5.5, "The third group is <strong>injuries</strong>: road crashes, drowning, violence. They took 770,000 lives.");
   beat(87.2, (api) => {
     const t = L.towers({ groups: L1_GROUPS(), keyFn: (d) => d.l1 });
     api.form({
@@ -158,8 +160,57 @@ export function buildScript() {
     });
     api.overlay(t);
   });
-  cap(87.5, 7, "And one cause that fits nowhere neatly. The gold dots are <strong>COVID-19</strong>: 493,000 deaths here in 2021, its worst year on the continent.");
-  cap(95.5, 6.5, "But this three-way split hides the thing that matters most: <strong>when in a life each death lands</strong>.");
+  cap(87.5, 7.4, "One cause does not fit neatly anywhere. The gold dots you see now are <strong>COVID-19</strong>. It killed 493,000 people here in 2021, its worst year on the continent.");
+  // Annotation: a gold label + leader arrow finding the COVID dot band live,
+  // so it tracks the tower layout at any viewport size.
+  beat(87.8, (api) => {
+    const covID = covidLeaf?.ID;
+    api.overlayFn((ctx, view, ts) => {
+      const al = clamp01((ts - 0.6) / 0.5) * (1 - clamp01((ts - 7.6) / 1.2));
+      if (al <= 0 || !covID) return;
+      let n = 0, sx = 0, minX = Infinity, minY = Infinity, maxY = -Infinity;
+      for (const p of api.pool.dots) {
+        if (p.d.leafID !== covID || p.a < 0.5) continue;
+        n++; sx += p.x;
+        if (p.x < minX) minX = p.x;
+        if (p.y < minY) minY = p.y;
+        if (p.y > maxY) maxY = p.y;
+      }
+      if (!n) return;
+      const cy = (minY + maxY) / 2;
+      ctx.globalAlpha = al;
+      ctx.font = `600 13px ${L.FONT_SANS}`;
+      ctx.fillStyle = L.GOLD;
+      ctx.strokeStyle = L.GOLD;
+      ctx.lineWidth = 1.2;
+      const tw = ctx.measureText("COVID-19").width;
+      if (minX - tw - 44 > 8) {
+        // label left of the tower, leader arrow into the gold band
+        const ax1 = minX - 8, ax0 = minX - 34;
+        ctx.textAlign = "right";
+        ctx.fillText("COVID-19", ax0 - 8, cy + 4);
+        ctx.beginPath();
+        ctx.moveTo(ax0, cy); ctx.lineTo(ax1, cy);
+        ctx.moveTo(ax1 - 5, cy - 3.5); ctx.lineTo(ax1, cy); ctx.lineTo(ax1 - 5, cy + 3.5);
+        ctx.stroke();
+      } else {
+        // narrow screens: label above the band (over tower dots, so give it
+        // a dark backing pill), short arrow down
+        const cx = sx / n;
+        ctx.fillStyle = "rgba(20,17,38,0.78)";
+        ctx.fillRect(cx - tw / 2 - 6, minY - 40, tw + 12, 20);
+        ctx.fillStyle = L.GOLD;
+        ctx.textAlign = "center";
+        ctx.fillText("COVID-19", cx, minY - 26);
+        ctx.beginPath();
+        ctx.moveTo(cx, minY - 20); ctx.lineTo(cx, minY - 6);
+        ctx.moveTo(cx - 3.5, minY - 11); ctx.lineTo(cx, minY - 6); ctx.lineTo(cx + 3.5, minY - 11);
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+    });
+  });
+  cap(95.5, 6.5, "But these three groups hide the question that matters most. <strong>How old were the people who died?</strong>");
   const ageGroups = (goldUnder5) => D.AGE_BANDS.map((age) => ({
     key: age,
     label: age === "<5" ? "Under 5" : age,
@@ -171,13 +222,13 @@ export function buildScript() {
     api.form({ select: () => true, place: t.place, duration: 2.2, stagger: 1.8 });
     api.overlay(t);
   });
-  cap(103, 4.5, "Sort the same 8.3 million dots by age instead.");
+  cap(103, 4.5, "So let's sort the same 8.3 million dots by age instead.");
   beat(108.5, (api) => {
     const t = L.towers({ groups: ageGroups(true), keyFn: (d) => d.age });
     api.form({ select: () => true, place: t.place, duration: 1.0, stagger: 0.2 });
     api.overlay(t);
   });
-  cap(108.8, 6.7, "<strong>2.7 million of them, one in every three, are children under five.</strong>");
+  cap(108.8, 6.7, "<strong>2.7 million of them were children under five.</strong> That is one out of every three deaths.");
 
   // == Chapter 3: The first five years (1:56) =============================
   chapter(116, "The first five years", { root: 73.42, chord: [0, 3, 10, 14], cutoff: 430, level: 0.9 });
@@ -187,11 +238,11 @@ export function buildScript() {
     api.form({ select, place: chart.place, duration: 2.2, stagger: 1.6 });
     api.overlay(chart);
   });
-  cap(116.5, 4.5, "Under five, the chart is a horror show.");
-  cap(121.5, 8, "<strong>Malaria</strong>: 450,000 children. The single largest killer of African children, from a disease we have known how to prevent for the better part of a century.");
-  cap(130.5, 5.5, "<strong>Lung infections</strong>, mostly pneumonia: 427,000. Most of them vaccine-preventable.");
-  cap(137, 8.5, "<strong>Preterm birth</strong>: 381,000 babies. <strong>Diarrhoeal disease</strong>, treatable with a thirty-cent packet of salts: 281,000. <strong>Birth asphyxia</strong>: 280,000.");
-  cap(146.5, 7.5, "Five causes, over <strong>1.8 million child deaths</strong> in a single year. The cheapest, most proven interventions in public health line up against exactly this list.");
+  cap(116.5, 4.5, "For children under five, this chart is hard to look at.");
+  cap(121.5, 8, "<strong>Malaria</strong> killed 450,000 children. It is the single biggest killer of African children, and we have known how to prevent it for almost a hundred years.");
+  cap(130.5, 5.8, "<strong>Lung infections</strong>, mostly pneumonia, killed 427,000. Vaccines could have prevented most of these deaths.");
+  cap(137, 9, "<strong>Preterm birth</strong> took 381,000 babies. <strong>Diarrhoeal disease</strong>, which a thirty-cent packet of salts can treat, took 281,000. <strong>Birth asphyxia</strong>, when a baby cannot breathe during delivery, took 280,000.");
+  cap(146.5, 7.5, "Just five causes killed more than <strong>1.8 million children</strong> in a single year. And the cheapest, best-proven interventions in public health are aimed at exactly this list.");
   beat(120, (api) => { api.dom((ui) => ui.hint(true)); });
   beat(132, (api) => { api.dom((ui) => ui.hint(false)); });
 
@@ -199,15 +250,15 @@ export function buildScript() {
   chapter(158, "The quiet years", { root: 98, chord: [0, 7, 14, 17], cutoff: 780, level: 0.8 });
 
   beat(158.5, (api) => {
-    const { chart, select } = hbarsFor("5-14", 6, { title: "Leading causes of death, ages 5-14. Africa, 2021" });
+    const { chart, select } = hbarsFor("5-14", 7, { title: "Leading causes of death, ages 5-14. Africa, 2021" });
     api.form({ select, place: chart.place, duration: 2.0, stagger: 1.4 });
     api.overlay(chart);
     api.overlayFn(L.l1Legend(LEGEND));
   });
-  cap(159, 6.5, "If a child makes it past five, the next decade is statistically the safest stretch of a human life.");
-  cap(166.5, 5.5, "Deaths fall to about 463,000, less than a fifth of the under-five toll.");
-  cap(173, 7, "And the mix changes. After the lingering infections come the accidental hazards of childhood: <strong>road injuries</strong> and <strong>drowning</strong>, water, fire, traffic.");
-  cap(181, 6, "After malaria, the biggest single threat to a school-age African child is something no doctor and no vaccine can fix.");
+  cap(159, 6.5, "Here is some good news. If a child makes it past five, the next ten years are the safest stretch of a human life.");
+  cap(166.5, 5.5, "Deaths drop to about 463,000. That is less than a fifth of the under-five number.");
+  cap(173, 7, "The causes change too. Infections are still on the list, but everyday accidents start climbing: <strong>road injuries</strong> and <strong>drowning</strong>.");
+  cap(181, 6.6, "Look at the second bar. After lung infections, the biggest single threat to a school-age child is a <strong>road accident</strong>. No doctor and no vaccine can fix that.");
 
   // == Chapter 5: The productive years (3:08) =============================
   chapter(188, "The productive years", { root: 82.41, chord: [0, 3, 7, 14], cutoff: 560, level: 1 });
@@ -218,11 +269,11 @@ export function buildScript() {
     api.overlay(chart);
     api.overlayFn(L.l1Legend(LEGEND));
   });
-  cap(189, 5.5, "From 15 to 49, the years of working, parenting and providing, the picture changes entirely.");
-  cap(195.5, 7.5, "<strong>HIV/AIDS</strong> is still the single largest killer of working-age Africans: 245,000 deaths in this band, three decades into the treatment era.");
-  cap(204, 7, "<strong>Tuberculosis</strong>: 146,000. <strong>Road injuries</strong>: 105,000. <strong>COVID-19</strong>: 98,000 in this age band in 2021 alone.");
-  cap(212, 5, "Interpersonal violence took 92,000 more. Self-harm, 49,000.");
-  cap(218, 10, "And about <strong>151,000 women</strong> died of causes tied to pregnancy and childbirth. These are deaths the world has formally agreed should not happen. Four African countries currently meet the SDG maternal-mortality bar. Forty-three do not.");
+  cap(189, 5.5, "From 15 to 49, the years of working and raising families, the picture changes completely.");
+  cap(195.5, 7.5, "<strong>HIV/AIDS</strong> is still the number one killer of working-age Africans. It took 245,000 lives in this age group, thirty years after good treatment became available.");
+  cap(204, 7, "<strong>Tuberculosis</strong> killed 146,000. <strong>Road injuries</strong>, 105,000. <strong>COVID-19</strong>, 98,000 in this age group in 2021 alone.");
+  cap(212, 5, "Violence took 92,000 more. Suicide, 49,000.");
+  cap(218, 10, "Still in this age group, about <strong>151,000 women</strong> died from complications of pregnancy and childbirth. The world has agreed on a target for making these deaths rare. Today, four African countries meet it. Forty-three do not.");
 
   // == Chapter 6: The NCD wave (3:52) =====================================
   chapter(232, "The NCD wave", { root: 65.41, chord: [0, 7, 16, 19], cutoff: 520, level: 0.9 });
@@ -233,16 +284,16 @@ export function buildScript() {
     api.overlay(chart);
     api.overlayFn(L.l1Legend(LEGEND));
   });
-  cap(233, 6, "Past fifty, the infections recede, and the chart fills with a different kind of death.");
-  cap(240, 6.5, "Ischaemic heart disease. Stroke. Hypertensive heart disease. Diabetes. The diseases the West spent fifty years learning to manage.");
+  cap(233, 6, "Past fifty, the picture shifts again. A different kind of death starts filling the chart.");
+  cap(240, 7.5, "Look at the top of the chart. <strong>COVID-19</strong> was the single biggest killer at this age in 2021. Right behind it come <strong>ischaemic heart disease</strong> and <strong>haemorrhagic stroke</strong>, the diseases rich countries spent fifty years learning to manage. And tuberculosis and HIV still have not let go.");
   beat(247.5, (api) => {
     const { chart, select } = hbarsFor("70+", 6, { title: "Leading causes of death, 70 and older. Africa, 2021" });
     api.form({ select, place: chart.place, duration: 1.8, stagger: 1.2 });
     api.overlay(chart);
     api.overlayFn(L.l1Legend(LEGEND));
   });
-  cap(248, 6.5, "By 70 and older, heart disease and the two strokes together account for roughly a third of all deaths.");
-  cap(255.5, 6, "And COVID-19 holds a top-five place right through the oldest band: over 200,000 deaths among Africans over 70 in 2021.");
+  cap(248, 6.5, "By 70 and older, heart disease and the two kinds of stroke together cause more than one in four deaths.");
+  cap(255.5, 6, "And COVID-19 is still near the top here: over 200,000 deaths among Africans over 70 in 2021.");
   beat(262.5, (api) => {
     const t = L.towers({
       groups: [
@@ -254,21 +305,48 @@ export function buildScript() {
     api.form({ select: (d) => d.leafID === haemLeaf.ID || d.leafID === ischLeaf.ID, place: t.place, duration: 1.8, stagger: 1.0 });
     api.overlay(t);
   });
-  cap(263, 9, "One detail worth pausing on. African stroke is predominantly <strong>haemorrhagic</strong>, the bleeding kind, the signature of years of untreated high blood pressure. Almost the inverse of the Western pattern.");
+  cap(263, 9.4, "One detail is worth a pause. Most strokes in Africa are <strong>haemorrhagic</strong>, the bleeding kind. That is what years of untreated high blood pressure does to blood vessels. In rich countries it is mostly the opposite: the clotting kind, <strong>ischaemic stroke</strong>, is more common.");
 
   // == Chapter 7: The double burden (4:33) ================================
   chapter(273, "The double burden", { root: 73.42, chord: [0, 5, 10, 14], cutoff: 620, level: 1 });
 
+  const shareBands = D.l1ByAge();
+  const shareChart = L.stackedShare({ bands: shareBands, l1Order: D.L1_ORDER });
   beat(273.5, (api) => {
-    const s = L.stackedShare({ bands: D.l1ByAge(), l1Order: D.L1_ORDER });
-    api.form({ select: () => true, place: s.place, duration: 2.6, stagger: 2.4 });
-    api.overlay(s);
+    api.form({ select: () => true, place: shareChart.place, duration: 2.6, stagger: 2.4 });
+    api.overlay(shareChart);
     api.overlayFn(L.l1Legend(LEGEND));
   });
-  cap(274, 5.5, "Now line all five ages up together, each scaled to 100%.");
-  cap(280.5, 6.5, "The terracotta share, the diseases of poverty, falls with age. The violet share, the diseases of ageing, rises. They cross in the working years.");
-  cap(288, 10.5, "Africa is the only continent living both halves at once. <strong>We are dying twice.</strong> Once young, of things our great-grandparents died of. Once older, of things the rich world's grandparents died of.");
-  cap(299.5, 8, "Most health systems were built for one wave or the other. Africa's are being asked to handle both at the same time, on a fraction of the per-capita budget.");
+  cap(274, 5.5, "Now put all five age groups side by side, each stretched to 100 percent.");
+  cap(280.5, 7, "The red share, the diseases of poverty, shrinks as people get older. The purple share, the diseases of ageing, grows. <strong>They trade places in the working years.</strong>");
+  // Annotation: mark the crossover between the 15-49 and 50-69 columns.
+  beat(280.8, (api) => {
+    api.overlayFn((ctx, view, ts) => {
+      const al = clamp01((ts - 0.5) / 0.5) * (1 - clamp01((ts - 7.6) / 1.2));
+      if (al <= 0 || !shareChart.geom) return;
+      const b3 = shareBands.find((b) => b.age === "15-49");
+      const b4 = shareBands.find((b) => b.age === "50-69");
+      if (!b3 || b3._gx == null || !b4 || b4._gx == null) return;
+      const { y0, H } = shareChart.geom;
+      const mx = (b3._gx + b4._gx) / 2;
+      ctx.globalAlpha = al;
+      ctx.textAlign = "center";
+      ctx.fillStyle = L.GOLD;
+      ctx.font = `600 12.5px ${L.FONT_SANS}`;
+      ctx.fillText("they trade places here", mx, y0 - 16);
+      ctx.strokeStyle = L.GOLD;
+      ctx.lineWidth = 1;
+      ctx.setLineDash([3, 5]);
+      ctx.beginPath();
+      ctx.moveTo(mx, y0 - 8);
+      ctx.lineTo(mx, y0 + H * 0.55);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.globalAlpha = 1;
+    });
+  });
+  cap(288, 10, "Africa is the only continent carrying both burdens at once. Children are still dying of the old diseases of poverty, and at the same time older adults are dying of the diseases of rich countries.");
+  cap(299.5, 8, "Most health systems were built to handle one of these burdens. African health systems are being asked to handle both at once, with far less money per person.");
 
   // == Chapter 8: The cheap deaths (5:08) =================================
   chapter(308.5, "The cheap deaths", { root: 87.31, chord: [0, 4, 7, 14], cutoff: 760, level: 0.9 });
@@ -297,10 +375,10 @@ export function buildScript() {
     api.form({ select: (d) => d.age === "<5" && keys.has(d.leafID), place: chart.place, duration: 2.2, stagger: 1.6 });
     api.overlay(chart);
   });
-  cap(309.5, 7, "Come back to the children one last time. The interventions that would prevent most of these deaths are, by any standard, almost embarrassingly cheap.");
-  cap(317.5, 9, "A bednet: <strong>$3</strong>. A full course of childhood vaccines: <strong>$40</strong>. A packet of oral rehydration salts: <strong>30 cents</strong>. A skilled birth attendant: about <strong>$50</strong>.");
-  cap(327.5, 7.5, "The NCD deaths further up the age range cost orders of magnitude more to prevent. But the cheapest health gains on Earth are still going unrealised, at scale, here.");
-  cap(336, 6, "The bottleneck is delivery, and underneath that, financing.");
+  cap(309.5, 7, "Let's come back to the children one last time. The interventions that would prevent most of these deaths are shockingly cheap.");
+  cap(317.5, 9, "A bednet costs <strong>three dollars</strong>. A full course of childhood vaccines, about <strong>forty dollars</strong>. A packet of oral rehydration salts, <strong>thirty cents</strong>. A trained birth attendant, about <strong>fifty dollars</strong>.");
+  cap(327.5, 7.5, "Preventing heart disease or cancer later in life costs far, far more. But these cheap wins for children are still not happening at full scale, right here where they are needed most.");
+  cap(336, 6, "The missing piece is getting these tools to every family, and finding the money to pay for it.");
 
   // == Chapter 9: The next outbreak (5:43) ================================
   chapter(343, "The next outbreak", { root: 110, chord: [0, 7, 12, 19], cutoff: 680, level: 0.8 });
@@ -308,7 +386,7 @@ export function buildScript() {
   beat(343.5, (api) => {
     api.form({ select: () => true, place: L.field({ color: L.NEUTRAL }).place, duration: 2.6, stagger: 2.0 });
   });
-  cap(344, 6, "The next outbreak will come. The press conferences and emergency operations centres will assemble, as they should.");
+  cap(344, 6, "The next outbreak will come. The press conferences and emergency teams will spring into action, and they should.");
   beat(351, (api) => {
     api.form({ select: () => true, place: L.field({ color: L.NEUTRAL }).place, duration: 0.8, stagger: 0.1 });
     api.formMore({
@@ -317,9 +395,26 @@ export function buildScript() {
       duration: 1.6, stagger: 0.8,
     });
   });
-  cap(351.5, 6, "It will look like this again: a small cluster of gold dots, and the whole world watching.");
-  cap(358.5, 5.5, "The causes that take far more lives, year after year, will not be in the news.");
-  cap(365, 4.5, "They are on the charts you have just watched.");
+  cap(351.5, 6, "It will look like this again. A small cluster of gold dots, with the whole world watching.");
+  // Annotation: a dashed circle picks the gold cluster out of the field.
+  // Stays on for the closing lines; this is the film's final image.
+  beat(351.8, (api) => {
+    api.overlayFn((ctx, view, ts) => {
+      const al = clamp01((ts - 0.8) / 0.8);
+      if (al <= 0) return;
+      ctx.globalAlpha = al * 0.9;
+      ctx.strokeStyle = L.GOLD;
+      ctx.lineWidth = 1.2;
+      ctx.setLineDash([4, 6]);
+      ctx.beginPath();
+      ctx.arc(view.w * 0.5, view.h * 0.4, 52, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.globalAlpha = 1;
+    });
+  });
+  cap(358.5, 5.5, "The causes that take far more lives, year after year, will not be as visible in the news.");
+  cap(365, 4.5, "They are in the charts you have just watched.");
 
   return { beats, captions, chapters, duration: 371 };
 }

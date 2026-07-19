@@ -37,6 +37,7 @@ export class Engine {
     return {
       view: self.view,
       snap,
+      pool: self.pool,
       form(opts) {
         self.overlays = [];
         self.pool.setFormation({ ...opts, view: self.view, snap, now: self._anow });
