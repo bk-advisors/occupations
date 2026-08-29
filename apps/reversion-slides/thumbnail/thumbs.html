@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Thumbnail options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Four YouTube thumbnails at 1280x720, in the film's Instrument identity.
+   ?t=1..4 shows one full-bleed for capture; ?guide=1 overlays the face slot.
+
+   Thumbnail rules these are built to: readable at 168px wide (the mobile
+   sidebar size), one idea only, no sentence, and the brass accent doing the
+   work rather than a coloured border or an arrow pile. */
+:root {
+  --stage:#14120E; --stage-deep:#0C0B08; --ink:#F2EDE1; --ink-soft:#BDB49F;
+  --ink-mute:#7E7663; --accent:#D9A441; --fall:#B4472F; --neutral:#8A8272; --dim:#3A352A;
+  --serif:"Instrument Serif",Georgia,serif; --sans:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0b0b0b;font-family:var(--sans)}
+.thumb{
+  position:relative;width:1280px;height:720px;overflow:hidden;
+  background:var(--stage);
+  background-image:repeating-linear-gradient(to bottom,transparent 0 27px,rgba(242,237,225,.05) 27px 28px);
+  display:none;
+}
+body.one .thumb.show{display:block}
+body:not(.one) .thumb{display:block;margin:0 auto 24px}
+/* Face slot: right third, kept clear of every mark. */
+.faceslot{position:absolute;right:0;top:0;width:430px;height:720px}
+body.guide .faceslot{
+  border:3px dashed rgba(217,164,65,.55);
+  background:rgba(217,164,65,.07);
+}
+body.guide .faceslot::after{
+  content:"drop your cutout here";position:absolute;left:0;right:0;bottom:24px;
+  text-align:center;font-family:var(--mono);font-size:18px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent);
+}
+.pad{position:absolute;left:64px;top:0;bottom:0;width:790px;display:flex;flex-direction:column;justify-content:center;gap:22px}
+.kick{font-family:var(--mono);font-size:22px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.big{font-family:var(--serif);font-size:108px;line-height:.95;color:var(--ink);letter-spacing:-.02em}
+.big em{font-style:italic;color:var(--accent)}
+.sub{font-family:var(--sans);font-size:30px;line-height:1.3;color:var(--ink-soft);max-width:660px}
+.num{font-family:var(--mono);font-weight:500;font-size:300px;line-height:.8;color:var(--accent);letter-spacing:-.04em}
+
+/* 2 — the two heights */
+.pair{display:flex;align-items:center;gap:40px}
+.pfig{text-align:center}
+.pfig img{width:190px;height:190px;border-radius:50%;object-fit:cover;object-position:50% 18%;border:7px solid var(--ink);display:block}
+.pfig.child img{border-color:var(--fall)}
+.pfig b{display:block;font-family:var(--mono);font-size:23px;margin-top:12px;color:var(--ink)}
+.pfig.child b{color:var(--fall)}
+.arrow{font-family:var(--mono);font-size:64px;color:var(--accent);line-height:1}
+
+/* 3 — the staircase */
+.stair{position:relative;height:250px;width:700px}
+.stair i{position:absolute;height:12px;background:var(--accent);border-radius:2px;display:block}
+.stair i.last{background:var(--fall)}
+
+/* 4 — two lines diverging */
+.lines{width:700px;height:230px}
+</style>
+</head>
+<body>
+
+<!-- 1 · the number -->
+<section class="thumb" data-n="1">
+  <div class="pad">
+    <p class="kick">Regression to the mean</p>
+    <p class="num">0.62</p>
+    <p class="sub">What a generation hands back, measured across 40 famous families.</p>
+  </div>
+  <div class="faceslot"></div>
+</section>
+
+<!-- 2 · father and son -->
+<section class="thumb" data-n="2">
+  <div class="pad">
+    <p class="kick">Measured 21 years apart</p>
+    <div class="pair">
+      <div class="pfig"><img src="../img/lebron-james.jpg" alt=""><b>6&prime; 7.3&Prime;</b></div>
+      <span class="arrow">&rarr;</span>
+      <div class="pfig child"><img src="../img/bronny-james.jpg" alt=""><b>6&prime; 1.5&Prime;</b></div>
+    </div>
+    <p class="big">An 1886 equation<br>called it to <em>0.4&Prime;</em></p>
+  </div>
+  <div class="faceslot"></div>
+</section>
+
+<!-- 3 · the dynasty staircase -->
+<section class="thumb" data-n="3">
+  <div class="pad">
+    <p class="kick">Five generations</p>
+    <p class="big">Why great fortunes<br><em>walk back to average</em></p>
+    <div class="stair">
+      <i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i><i class="last"></i>
+    </div>
+  </div>
+  <div class="faceslot"></div>
+</section>
+
+<!-- 4 · the two lines -->
+<section class="thumb" data-n="4">
+  <div class="pad">
+    <p class="kick">Galton, 1886</p>
+    <p class="big">Luck is not<br><em>inherited</em></p>
+    <svg class="lines" viewBox="0 0 700 230">
+      <line x1="20" y1="205" x2="670" y2="30" stroke="#7E7663" stroke-width="5" stroke-dasharray="14 11"/>
+      <line x1="20" y1="180" x2="670" y2="88" stroke="#D9A441" stroke-width="9"/>
+      <text x="670" y="18" text-anchor="end" font-family="IBM Plex Sans" font-size="24" fill="#7E7663">what people expect</text>
+      <text x="670" y="128" text-anchor="end" font-family="IBM Plex Sans" font-size="26" font-weight="600" fill="#D9A441">what the data does</text>
+    </svg>
+  </div>
+  <div class="faceslot"></div>
+</section>
+
+<script>
+  // staircase bars: real Vanderbilt sigma values, stepped down and left
+  const Z = [5.32, 5.34, 4.86, 3.97, 1.47];
+  const el = document.querySelectorAll(".stair i");
+  const max = 5.6, min = 1.0;
+  el.forEach((b, i) => {
+    const w = ((Z[i] - min) / (max - min)) * 660 + 40;
+    b.style.width = w + "px";
+    b.style.left = "0px";
+    b.style.top = (i * 52) + "px";
+  });
+
+  const q = new URLSearchParams(location.search);
+  if (q.has("t")) {
+    document.body.classList.add("one");
+    const s = document.querySelector(`.thumb[data-n="${q.get("t")}"]`);
+    if (s) s.classList.add("show");
+  }
+  if (q.has("guide")) document.body.classList.add("guide");
+</script>
+</body>
+</html>

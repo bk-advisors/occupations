@@ -1,0 +1,221 @@
+/* ============================================================================
+   INTEGRATION LAYER
+   Seams between independently written modules. Nothing here is a design
+   decision; every rule exists because two files disagreed about something and
+   the disagreement showed up as a measured defect in the browser.
+   Loads last, so it wins without anyone editing anyone else's file.
+   ========================================================================== */
+
+/* Scenes append <table> straight into <details class="tbl-wrap">, and a wide
+   table then pushes the whole PAGE sideways: 40 dynasty rows measured 763px
+   inside a 390px viewport. display:block turns the table into its own scroll
+   box so the overflow stays where it belongs. */
+.tbl-wrap > table,
+.tbl-wrap table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tbl-wrap table thead,
+.tbl-wrap table tbody { display: table; width: 100%; min-width: max-content; }
+.tbl-wrap table th,
+.tbl-wrap table td { white-space: nowrap; }
+
+/* A flex item's default min-width is auto, not zero, so a long single-line
+   readout refuses to shrink and drags the row past the viewport. The engine's
+   readout measured 594px at 390px wide. */
+.ctrl-row,
+.ctrl-row > *,
+.ctrl,
+.legend,
+.legend-item { min-width: 0; }
+
+.readout {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Belt and braces on the page itself. A single mis-sized child inside one
+   scene should degrade that scene, never hand the whole essay a sideways
+   scrollbar. */
+html, body { max-width: 100%; overflow-x: clip; }
+.stage { max-width: 100%; }
+.stage svg, .stage canvas { max-width: 100%; }
+
+/* ── Token aliases ─────────────────────────────────────────────────────────
+   Scene modules were written against token names the sheet does not define:
+   --muted, --accent, --grid, --gold, --dom-*, --font-*. RTM.css() returned
+   empty, so every one of those scenes silently fell back to a HARDCODED hex.
+   Two consequences, both measured: the board's axis labels came out at 3.87:1
+   in light and 4.27:1 in dark (both fail 4.5:1), and because the fallback is a
+   literal it never repainted on a theme flip.
+
+   Aliasing through var() rather than copying the hex means these follow the
+   real tokens into dark mode and into any future palette change. */
+:root {
+  --muted: var(--ink-3);
+  --accent: var(--outlier);
+  --grid: var(--rule);
+  --gold: var(--sport);
+  --dom-sport: var(--sport);
+  --dom-politics: var(--politics);
+  --dom-business: var(--business);
+  --font-sans: var(--sans);
+  --font-mono: var(--mono);
+  --font-serif: var(--serif);
+}
+
+/* ══ Retire the sticky two-column scrolly ══════════════════════════════════
+   Measured content heights against an 86svh pane at 1440x900:
+
+     dynasties 1853px    traits 1145px    survivors 1124px    galton 765px
+
+   Nothing but galton fits. Pinning the rest produced three compounding
+   failures visible in any screenshot: sentences sliced in half at the pane
+   edge, charts squeezed into a 512px column inside a 1440px window, and a
+   step column of 42svh paddings that read as acres of empty paper.
+
+   A graphic that does not fit the viewport is not a scrolly graphic. So these
+   flow in the page at full width instead. The scenes still receive progress(t)
+   from their track position, so the animation still plays as the reader
+   arrives; it simply is not pinned while they read past it.
+   This block comes after css/03-layout.css and deliberately overrides it. */
+@media (min-width: 56.25rem) {
+  .scrolly { display: block; }
+
+  .scrolly > .stage,
+  .scrolly > .scrolly-fig {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    width: 100%;
+    grid-column: auto;
+    grid-row: auto;
+    margin-inline: auto;
+  }
+
+  /* The beats become a readable row under the figure rather than a tall
+     column beside it. Three across at desktop, and never dimmed, because
+     dimming only means anything next to a pinned graphic. */
+  .scrolly-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--s-5) var(--s-6);
+    grid-column: auto;
+    grid-row: auto;
+    margin-top: var(--s-5);
+  }
+  .scrolly-steps > .step,
+  .step {
+    padding-block: 0;
+    opacity: 1;
+  }
+  .step[data-dim="true"] { opacity: 1; }
+  .step > * { max-width: none; }
+
+  .scrolly-right > .scrolly-fig,
+  .scrolly-right > .stage,
+  .scrolly-right > .scrolly-steps { grid-column: auto; }
+}
+
+/* Narrow screens already stacked, but inherited the tall step paddings. */
+@media (max-width: 56.249rem) {
+  .step { padding-block: var(--s-3); }
+  .scrolly > .stage { max-height: none; overflow: visible; }
+}
+
+/* ══ Hero ═════════════════════════════════════════════════════════════════
+   Two faults, one cause. `.hero` is a grid of `1fr auto` and `css/03-layout.css`
+   puts the text in row 2 via `.hero-inner`. The writer's markup uses `.col`
+   instead, so the text block auto-placed into row 1 and STRETCHED the full
+   1056px of the hero. That is why the headline was painting over the dot crowd:
+   it was not sitting under it, it was occupying all of it.
+
+   Second fault: `.hero h1 { max-width: 16ch }` against a 96 character headline
+   wraps it to eight lines, one of which is the word "of" on its own.
+
+   Fixed here rather than in either file, because the disagreement is between
+   the two and neither is wrong on its own terms. */
+.hero > .col {
+  grid-row: 2;
+  align-self: end;
+  position: relative;
+  z-index: 1;
+  padding-bottom: var(--s-5);
+}
+
+/* Legibility over the crowd is a HALO, not a scrim. The scrim version worked
+   and that was the problem: it covered the canvas and the distribution simply
+   disappeared, which loses the one thing the hero is for. A paper coloured
+   text-shadow ring carves each glyph out of whatever runs behind it, exactly
+   the trick RTM.txt() already uses for every SVG label in the piece. */
+.hero > .col :is(h1, .standfirst, .eyebrow, .byline) {
+  /* Three shadows, not six, and 8px max instead of 18px. The drawing no longer
+     runs underneath the type, so the halo only has to carve glyph edges. At
+     18px it stopped being a halo and became a translucent rectangle, which
+     flattened the paper grain behind the text and read as a vertical seam
+     down the hero. */
+  text-shadow:
+     0 0 4px var(--paper),
+     0 0 4px var(--paper),
+     0 0 8px var(--paper);
+}
+
+/* A headline is not more emphatic for being broken into eight pieces. */
+.hero h1 {
+  max-width: 22ch;
+  font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+.hero .standfirst { max-width: 46ch; }
+
+/* The hero type is a 544px measure column with auto side margins, so at 1440px
+   it split the hero into two ~375px gutters and the drawing got one of them.
+   Left-aligning it hands the scene a single ~820px band instead, and the scene
+   already measures the type block and lays itself out in whatever rectangle is
+   left, so this needs no JS change. Type left, distribution right. */
+@media (min-width: 68rem) {
+  .hero > .col {
+    justify-self: start;
+    margin-inline: 0;
+    padding-inline-start: clamp(1.25rem, 3.5vw, 3.5rem);
+  }
+}
+
+/* The footer source list, built by js/90-boot.js from RTM.data.SOURCES. */
+.source-list {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.source-list li { margin-bottom: 0.45rem; }
+.source-list a {
+  color: var(--ink-3);
+  font-family: var(--mono);
+  font-size: 0.92em;
+  word-break: break-word;
+}
+
+
+/* The hero reserved 92svh but bottom-aligns its type, leaving a dead column
+   under the byline. Size the hero to its content instead of to the viewport. */
+.hero { min-height: 0; }
+@media (min-width: 68rem) {
+  .hero { min-height: min(76svh, 46rem); }
+}
+
+/* The 23 citation links were 14px tall, which is a poor tap target on a phone.
+   inline-block plus vertical padding grows the hit box without breaking the
+   flow of the sentence they sit at the end of. */
+.source-list a {
+  display: inline-block;
+  padding: 0.34rem 0;
+  min-height: 1.9rem;
+  line-height: 1.25;
+}

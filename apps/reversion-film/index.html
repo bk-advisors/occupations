@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reversion to the Mean: why the children of extraordinary people land closer to average</title>
+  <meta name="description" content="A narrated data film about regression to the mean, told through Galton's 928 children, a box with pegs in it, and forty famous families in sport, politics and business." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="film">
+    <canvas id="stage"></canvas>
+
+    <!-- Title screen -->
+    <div id="titleScreen">
+      <div class="title-inner">
+        <p class="title-kicker">A data film &middot; Galton 1886, and forty families since</p>
+        <h1>Reversion<br />to the <em>Mean</em></h1>
+        <p class="title-dek">Why the children of extraordinary people land closer to average. An extreme number is part durable and part luck, and only one of them has children.</p>
+        <button id="beginBtn">Begin</button>
+        <p class="title-note">About fourteen minutes, narrated. Pause at any point and hover a paused chart to read the numbers yourself. Best on a laptop or larger screen, with sound.</p>
+        <p class="title-links">
+          Prefer to read and poke at it? <a href="../reversion-story/">The written version</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- End card -->
+    <div id="endCard" hidden>
+      <div class="end-inner">
+        <p class="title-kicker">Reversion to the Mean</p>
+        <h2>Less extreme is not the same as ordinary, and the difference is <em>where nearly everyone lives</em>.</h2>
+        <p class="end-credits">
+          Written, directed, designed and edited by Matthew Kuch, with coding support from Claude.<br />
+          Data: Galton&rsquo;s 1886 tally of 928 adult children; published parent-child correlations
+          for height, earnings, wealth, schooling, IQ, lifespan and surname status; and 40 families
+          placed as z scores against named reference populations. Every placement that is a
+          judgement rather than a measurement carries an uncertainty band and is kept out of the
+          headline numbers.
+        </p>
+        <details id="imageCredits">
+          <summary>Photograph credits and licences</summary>
+          <div id="imageCreditsBody"></div>
+        </details>
+        <p class="end-links">
+          <a href="../reversion-story/">Read the written version</a>
+        </p>
+        <button id="replayBtn">&#8634;&nbsp; Watch again</button>
+      </div>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud">
+      <div id="chapterTag"></div>
+      <div id="keyTag" hidden></div>
+      <div id="hintTag" hidden>Press space to pause at any point. Hovering a paused chart shows the numbers.</div>
+      <div id="caption"></div>
+      <div id="explorePanel" hidden>
+        <span id="explorePrompt"></span>
+        <button id="continueBtn">Continue &#9654;&#xFE0E;</button>
+      </div>
+      <div id="tooltip" hidden></div>
+    </div>
+
+    <!-- Controls -->
+    <div id="controls" hidden>
+      <button id="playBtn" title="Play / pause (space)">&#9654;&#xFE0E;</button>
+      <span id="timeNow">0:00</span>
+      <div id="scrubber"><div id="scrubTrack"><div id="scrubFill"></div></div><div id="scrubChapters"></div></div>
+      <span id="timeTotal">0:00</span>
+      <button id="muteBtn" title="Mute / unmute (m)">&#9835;</button>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

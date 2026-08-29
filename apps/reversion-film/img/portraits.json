@@ -1,0 +1,242 @@
+[
+  {
+    "slug": "cornelius-vanderbilt",
+    "name": "Cornelius Vanderbilt",
+    "file": "img/cornelius-vanderbilt.jpg",
+    "source": "Cornelius_Vanderbilt_Daguerrotype2_(cropped)(b).jpg",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "Produced by Mathew Brady 's studio, restored by Michel Vuijlsteke",
+    "page": "https://commons.wikimedia.org/wiki/File:Cornelius_Vanderbilt_Daguerrotype2_(cropped)(b).jpg"
+  },
+  {
+    "slug": "william-henry-vanderbilt",
+    "name": "William Henry Vanderbilt",
+    "file": "img/william-henry-vanderbilt.jpg",
+    "source": "William_Henry_Vanderbilt_-_Egyptian_Obelisks_(cropped).jpg",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "Edward Bierstadt (credit reads \"Artotype, E. Bierstadt NY\")",
+    "page": "https://commons.wikimedia.org/wiki/File:William_Henry_Vanderbilt_-_Egyptian_Obelisks_(cropped).jpg"
+  },
+  {
+    "slug": "cornelius-vanderbilt-ii",
+    "name": "Cornelius Vanderbilt II",
+    "file": "img/cornelius-vanderbilt-ii.jpg",
+    "source": "Cornelius_Vanderbilt_II_by_John_Singer_Sargent_(1856-1925)_(cropped).jpg",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "John Singer Sargent",
+    "page": "https://commons.wikimedia.org/wiki/File:Cornelius_Vanderbilt_II_by_John_Singer_Sargent_(1856-1925)_(cropped).jpg"
+  },
+  {
+    "slug": "reginald-vanderbilt",
+    "name": "Reginald Claypoole Vanderbilt",
+    "file": "img/reginald-vanderbilt.jpg",
+    "source": "Reginald_Vanderbilt_LCCN2014717212_(cropped).jpg",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "Bain News Service, publisher",
+    "page": "https://commons.wikimedia.org/wiki/File:Reginald_Vanderbilt_LCCN2014717212_(cropped).jpg"
+  },
+  {
+    "slug": "gloria-vanderbilt",
+    "name": "Gloria Vanderbilt",
+    "file": "img/gloria-vanderbilt.jpg",
+    "source": "Gloria_Vanderbilt_1959.JPG",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "United States Steel Corporation, the show's sponsor.",
+    "page": "https://commons.wikimedia.org/wiki/File:Gloria_Vanderbilt_1959.JPG"
+  },
+  {
+    "slug": "francis-galton",
+    "name": "Francis Galton",
+    "file": "img/francis-galton.jpg",
+    "source": "Francis_Galton_1850s.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "not stated",
+    "page": "https://commons.wikimedia.org/wiki/File:Francis_Galton_1850s.jpg"
+  },
+  {
+    "slug": "lebron-james",
+    "name": "LeBron James",
+    "file": "img/lebron-james.jpg",
+    "source": "LeBron_James_(51959977144)_(cropped2).jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Erik Drost",
+    "page": "https://commons.wikimedia.org/wiki/File:LeBron_James_(51959977144)_(cropped2).jpg"
+  },
+  {
+    "slug": "bronny-james",
+    "name": "Bronny James",
+    "file": "img/bronny-james.jpg",
+    "source": "Bronny_James_Jr._(55095342116)_(cropped).jpg",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "author": "Erik Drost",
+    "page": "https://commons.wikimedia.org/wiki/File:Bronny_James_Jr._(55095342116)_(cropped).jpg"
+  },
+  {
+    "slug": "dell-curry",
+    "name": "Dell Curry",
+    "file": "img/dell-curry.jpg",
+    "source": "Dell_Curry_at_2016_All-Star_Weekend.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Iam_chihang",
+    "page": "https://commons.wikimedia.org/wiki/File:Dell_Curry_at_2016_All-Star_Weekend.jpg"
+  },
+  {
+    "slug": "stephen-curry",
+    "name": "Stephen Curry",
+    "file": "img/stephen-curry.jpg",
+    "source": "Stephen_Curry,_Olympic_Games_2024_(cropped).jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "Clément Bardot",
+    "page": "https://commons.wikimedia.org/wiki/File:Stephen_Curry,_Olympic_Games_2024_(cropped).jpg"
+  },
+  {
+    "slug": "rick-barry",
+    "name": "Rick Barry",
+    "file": "img/rick-barry.jpg",
+    "source": "Rick_Barry.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Corey Carter from Fremont, US",
+    "page": "https://commons.wikimedia.org/wiki/File:Rick_Barry.jpg"
+  },
+  {
+    "slug": "brent-barry",
+    "name": "Brent Barry",
+    "file": "img/brent-barry.jpg",
+    "source": "Brent_Barry.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "flickr user b r e n t (presumably a coincidence)",
+    "page": "https://commons.wikimedia.org/wiki/File:Brent_Barry.jpg"
+  },
+  {
+    "slug": "jack-nicklaus",
+    "name": "Jack Nicklaus",
+    "file": "img/jack-nicklaus.jpg",
+    "source": "Panther_National_Jack_and_Justin-8452_(3x4_cropped).jpg",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "author": "PantherNational",
+    "page": "https://commons.wikimedia.org/wiki/File:Panther_National_Jack_and_Justin-8452_(3x4_cropped).jpg"
+  },
+  {
+    "slug": "winston-churchill",
+    "name": "Winston Churchill",
+    "file": "img/winston-churchill.jpg",
+    "source": "Sir_Winston_Churchill_-_19086236948_(restored).jpg",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "Yousuf Karsh",
+    "page": "https://commons.wikimedia.org/wiki/File:Sir_Winston_Churchill_-_19086236948_(restored).jpg"
+  },
+  {
+    "slug": "randolph-churchill",
+    "name": "Randolph Churchill",
+    "file": "img/randolph-churchill.jpg",
+    "source": "Cecil_Beaton_Photographs-_Political_and_Military_Personalities;_Churchill,_Randolph_Frederick_Edward_Spencer_CBM1585.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "Cecil Beaton",
+    "page": "https://commons.wikimedia.org/wiki/File:Cecil_Beaton_Photographs-_Political_and_Military_Personalities;_Churchill,_Randolph_Frederick_Edward_Spencer_CBM1585.jpg"
+  },
+  {
+    "slug": "margaret-thatcher",
+    "name": "Margaret Thatcher",
+    "file": "img/margaret-thatcher.jpg",
+    "source": "Margaret_Thatcher_stock_portrait_(cropped).jpg",
+    "licence": "Copyrighted free use",
+    "licenceUrl": "",
+    "author": "derivative work by Begoon",
+    "page": "https://commons.wikimedia.org/wiki/File:Margaret_Thatcher_stock_portrait_(cropped).jpg"
+  },
+  {
+    "slug": "andrew-carnegie",
+    "name": "Andrew Carnegie",
+    "file": "img/andrew-carnegie.jpg",
+    "source": "Andrew_Carnegie,_by_Theodore_Marceau_(cropped)_(2).jpg",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "Theodore C. Marceau",
+    "page": "https://commons.wikimedia.org/wiki/File:Andrew_Carnegie,_by_Theodore_Marceau_(cropped)_(2).jpg"
+  },
+  {
+    "slug": "bill-gates",
+    "name": "Bill Gates",
+    "file": "img/bill-gates.jpg",
+    "source": "Bill_Gates_at_the_European_Commission_-_P067383-987995_(cropped)_5.jpg",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+    "author": "Bogdan Hoyaux / European Union",
+    "page": "https://commons.wikimedia.org/wiki/File:Bill_Gates_at_the_European_Commission_-_P067383-987995_(cropped)_5.jpg"
+  },
+  {
+    "slug": "warren-buffett",
+    "name": "Warren Buffett",
+    "file": "img/warren-buffett.jpg",
+    "source": "Warren_Buffett_at_the_2015_SelectUSA_Investment_Summit_(cropped).jpg",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "USA International Trade Administration",
+    "page": "https://commons.wikimedia.org/wiki/File:Warren_Buffett_at_the_2015_SelectUSA_Investment_Summit_(cropped).jpg"
+  },
+  {
+    "slug": "john-adams",
+    "name": "John Adams",
+    "file": "img/john-adams.jpg",
+    "source": "John_Adams_Portrait.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "Gilbert Stuart",
+    "page": "https://commons.wikimedia.org/wiki/File:John_Adams_Portrait.jpg"
+  },
+  {
+    "slug": "john-quincy-adams",
+    "name": "John Quincy Adams",
+    "file": "img/john-quincy-adams.jpg",
+    "source": "JQA_Photo_Crop_(cropped).jpg",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "Mathew Brady",
+    "page": "https://commons.wikimedia.org/wiki/File:JQA_Photo_Crop_(cropped).jpg"
+  },
+  {
+    "slug": "daniel-kahneman",
+    "name": "Daniel Kahneman",
+    "file": "img/daniel-kahneman.jpg",
+    "source": "Daniel_Kahneman_(3283955327)_(cropped).jpg",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "author": "nrkbeta",
+    "page": "https://commons.wikimedia.org/wiki/File:Daniel_Kahneman_(3283955327)_(cropped).jpg"
+  },
+  {
+    "slug": "bobby-bonds",
+    "name": "Bobby Bonds",
+    "file": "img/bobby-bonds.jpg",
+    "source": "Bobby_Bonds_in_1975.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "",
+    "author": "MLB Photos",
+    "page": "https://commons.wikimedia.org/wiki/File:Bobby_Bonds_in_1975.jpg"
+  },
+  {
+    "slug": "barry-bonds",
+    "name": "Barry Bonds",
+    "file": "img/barry-bonds.jpg",
+    "source": "BarryBonds1993.jpg",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+    "author": "Jim Accordino at https://www.flickr.com/photos/jimmyack205/",
+    "page": "https://commons.wikimedia.org/wiki/File:BarryBonds1993.jpg"
+  }
+]

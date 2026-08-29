@@ -1,0 +1,634 @@
+[
+  {
+    "n": 1,
+    "file": "line-01",
+    "chapter": 1,
+    "seconds": 5.4,
+    "text": "In eighteen seventy seven, Cornelius Vanderbilt died the richest man in America.",
+    "original": "In 1877, Cornelius Vanderbilt died the richest man in America."
+  },
+  {
+    "n": 2,
+    "file": "line-02",
+    "chapter": 1,
+    "seconds": 8.2,
+    "text": "He was worth about one hundred and five million dollars, at a time when there were nine and a half million households in the country. Out here, on the right, on his own.",
+    "original": "He was worth about 105 million dollars, at a time when there were nine and a half million households in the country. Out here, on the right, on his own."
+  },
+  {
+    "n": 3,
+    "file": "line-03",
+    "chapter": 1,
+    "seconds": 7.4,
+    "text": "He left almost all of it to one son, deliberately, to keep it whole. That son nearly doubled it in eight years.",
+    "original": "He left almost all of it to one son, deliberately, to keep it whole. That son nearly doubled it in eight years."
+  },
+  {
+    "n": 4,
+    "file": "line-04",
+    "chapter": 1,
+    "seconds": 6.6,
+    "text": "Then the fortune was split eight ways. The eldest got the biggest share and still ended with about a third of what his father held.",
+    "original": "Then the fortune was split eight ways. The eldest got the biggest share and still ended with about a third of what his father held."
+  },
+  {
+    "n": 5,
+    "file": "line-05",
+    "chapter": 1,
+    "seconds": 6.2,
+    "text": "The generation after that received five million in trust, and spent most of it on horses.",
+    "original": "The generation after that received five million in trust, and spent most of it on horses."
+  },
+  {
+    "n": 6,
+    "file": "line-06",
+    "chapter": 1,
+    "seconds": 8.6,
+    "text": "And in twenty nineteen, Gloria Vanderbilt died with an estate reported at under one and a half million dollars. Her son has said he expected nothing and received almost none.",
+    "original": "And in 2019, Gloria Vanderbilt died with an estate reported at under one and a half million dollars. Her son has said he expected nothing and received almost none."
+  },
+  {
+    "n": 7,
+    "file": "line-07",
+    "chapter": 1,
+    "seconds": 8.8,
+    "text": "Ninety six years after the Commodore died, the family held its first reunion. A descendant counted the room. Among a hundred and twenty relatives, there was not a millionaire.",
+    "original": "Ninety six years after the Commodore died, the family held its first reunion. A descendant counted the room. Among a hundred and twenty relatives, there was not a millionaire."
+  },
+  {
+    "n": 8,
+    "file": "line-08",
+    "chapter": 1,
+    "seconds": 6.4,
+    "text": "The usual explanation is spending. Marble houses, yachts, a family that stopped building things and started decorating them.",
+    "original": "The usual explanation is spending. Marble houses, yachts, a family that stopped building things and started decorating them."
+  },
+  {
+    "n": 9,
+    "file": "line-09",
+    "chapter": 1,
+    "seconds": 4.4,
+    "text": "There is truth in that, and it makes a good book.",
+    "original": "There is truth in that, and it makes a good book."
+  },
+  {
+    "n": 10,
+    "file": "line-10",
+    "chapter": 1,
+    "seconds": 8.2,
+    "text": "But the same shape turns up in families that spent nothing at all. It turns up in height, in exam scores, in batting averages, in second albums.",
+    "original": "But the same shape turns up in families that spent nothing at all. It turns up in height, in exam scores, in batting averages, in second albums."
+  },
+  {
+    "n": 11,
+    "file": "line-11",
+    "chapter": 1,
+    "seconds": 4.2,
+    "text": "Something very ordinary is going on.",
+    "original": "Something very ordinary is going on."
+  },
+  {
+    "n": 12,
+    "file": "line-12",
+    "chapter": 2,
+    "seconds": 6.2,
+    "text": "In the eighteen eighties a man named Francis Galton set out to prove that greatness breeds greatness.",
+    "original": "In the 1880s a man named Francis Galton set out to prove that greatness breeds greatness."
+  },
+  {
+    "n": 13,
+    "file": "line-13",
+    "chapter": 2,
+    "seconds": 7,
+    "text": "He wanted a hereditary aristocracy of talent, and he went looking for the proof in the easiest thing to measure.",
+    "original": "He wanted a hereditary aristocracy of talent, and he went looking for the proof in the easiest thing to measure."
+  },
+  {
+    "n": 14,
+    "file": "line-14",
+    "chapter": 2,
+    "seconds": 7.6,
+    "text": "He collected the heights of nine hundred and twenty eight grown children, along with the heights of their parents, and plotted one against the other.",
+    "original": "He collected the heights of 928 grown children, along with the heights of their parents, and plotted one against the other."
+  },
+  {
+    "n": 15,
+    "file": "line-15",
+    "chapter": 2,
+    "seconds": 7.2,
+    "text": "Each dot is one adult child. Along the bottom, the average of their two parents. Up the side, how the child turned out.",
+    "original": "Each dot is one adult child. Along the bottom, the average of their two parents. Up the side, how the child turned out."
+  },
+  {
+    "n": 16,
+    "file": "line-16",
+    "chapter": 2,
+    "seconds": 7.4,
+    "text": "The dashed line is the world most people carry around in their head. Children match their parents. Every family holds its place.",
+    "original": "The dashed line is the world most people carry around in their head. Children match their parents. Every family holds its place."
+  },
+  {
+    "n": 17,
+    "file": "line-17",
+    "chapter": 2,
+    "seconds": 8.4,
+    "text": "The line the data actually draws is flatter. On the right, among the tall families, it sits below the expectation. On the left it sits above.",
+    "original": "The line the data actually draws is flatter. On the right, among the tall families, it sits below the expectation. On the left it sits above."
+  },
+  {
+    "n": 18,
+    "file": "line-18",
+    "chapter": 2,
+    "seconds": 8,
+    "text": "Its slope is zero point six five. A child kept about two thirds of the parents' distance from average, and handed the rest back.",
+    "original": "Its slope is 0.65. A child kept about two thirds of the parents' distance from average, and handed the rest back."
+  },
+  {
+    "n": 19,
+    "file": "line-19",
+    "chapter": 2,
+    "seconds": 6.6,
+    "text": "Tall parents did have tall children. Just not as tall. Short parents had short children, and not as short.",
+    "original": "Tall parents did have tall children. Just not as tall. Short parents had short children, and not as short."
+  },
+  {
+    "n": 20,
+    "file": "line-20",
+    "chapter": 2,
+    "seconds": 5.2,
+    "text": "Every family had drifted back toward the middle while he was not looking.",
+    "original": "Every family had drifted back toward the middle while he was not looking."
+  },
+  {
+    "n": 21,
+    "file": "line-21",
+    "chapter": 2,
+    "seconds": 7.2,
+    "text": "He published it in eighteen eighty six under a title that still has an edge on it. Regression towards mediocrity in hereditary stature.",
+    "original": "He published it in 1886 under a title that still has an edge on it. Regression towards mediocrity in hereditary stature."
+  },
+  {
+    "n": 22,
+    "file": "line-22",
+    "chapter": 2,
+    "seconds": 6.8,
+    "text": "He had gone looking for the dashed line and found the solid one, so he named the finding after his own disappointment.",
+    "original": "He had gone looking for the dashed line and found the solid one, so he named the finding after his own disappointment."
+  },
+  {
+    "n": 23,
+    "file": "line-23",
+    "chapter": 2,
+    "seconds": 6.2,
+    "text": "It is the wrong name. Nothing is being pulled anywhere. Nobody is being punished for being tall.",
+    "original": "It is the wrong name. Nothing is being pulled anywhere. Nobody is being punished for being tall."
+  },
+  {
+    "n": 24,
+    "file": "line-24",
+    "chapter": 3,
+    "seconds": 4,
+    "text": "The whole effect is one multiplication.",
+    "original": "The whole effect is one multiplication."
+  },
+  {
+    "n": 25,
+    "file": "line-25",
+    "chapter": 3,
+    "seconds": 8.2,
+    "text": "Take how far the parent sits from average, counted in standard deviations. Multiply by one number. That is where you expect the child to land.",
+    "original": "Take how far the parent sits from average, counted in standard deviations. Multiply by one number. That is where you expect the child to land."
+  },
+  {
+    "n": 26,
+    "file": "line-26",
+    "chapter": 3,
+    "seconds": 9,
+    "text": "For height, that number is zero point four seven. An average parent loses nothing, because zero multiplied by anything is still zero. Which is why nobody notices this in their own family.",
+    "original": "For height, that number is 0.47. An average parent loses nothing, because zero multiplied by anything is still zero. Which is why nobody notices this in their own family."
+  },
+  {
+    "n": 27,
+    "file": "line-27",
+    "chapter": 3,
+    "seconds": 7.6,
+    "text": "LeBron James stands three point four standard deviations above the average American man. About one man in two thousand eight hundred is that tall.",
+    "original": "LeBron James stands 3.4 standard deviations above the average American man. About one man in 2,800 is that tall."
+  },
+  {
+    "n": 28,
+    "file": "line-28",
+    "chapter": 3,
+    "seconds": 5.8,
+    "text": "Multiply by zero point four seven and the expected son comes out at six foot one point nine.",
+    "original": "Multiply by 0.47 and the expected son comes out at 6 foot 1.9."
+  },
+  {
+    "n": 29,
+    "file": "line-29",
+    "chapter": 3,
+    "seconds": 8.4,
+    "text": "Bronny James measured six foot one point five barefoot at the draft combine, on the same instrument that measured his father twenty one years earlier.",
+    "original": "Bronny James measured 6 foot 1.5 barefoot at the draft combine, on the same instrument that measured his father twenty one years earlier."
+  },
+  {
+    "n": 30,
+    "file": "line-30",
+    "chapter": 3,
+    "seconds": 6.4,
+    "text": "An equation written in eighteen eighty six, with no knowledge of genetics, missed him by four tenths of an inch.",
+    "original": "An equation written in 1886, with no knowledge of genetics, missed him by four tenths of an inch."
+  },
+  {
+    "n": 31,
+    "file": "line-31",
+    "chapter": 3,
+    "seconds": 8.8,
+    "text": "Now the honest part. The model does not predict a person. The range for any single son covers about ten inches, which is most of the adult male range.",
+    "original": "Now the honest part. The model does not predict a person. The range for any single son covers about 10 inches, which is most of the adult male range."
+  },
+  {
+    "n": 32,
+    "file": "line-32",
+    "chapter": 3,
+    "seconds": 8.4,
+    "text": "What it gets right is the centre. The whole crowd of possible sons was shifted down, and the size of the shift was fixed before he was born.",
+    "original": "What it gets right is the centre. The whole crowd of possible sons was shifted down, and the size of the shift was fixed before he was born."
+  },
+  {
+    "n": 33,
+    "file": "line-33",
+    "chapter": 4,
+    "seconds": 4.4,
+    "text": "Galton also built a wooden box with pegs in it.",
+    "original": "Galton also built a wooden box with pegs in it."
+  },
+  {
+    "n": 34,
+    "file": "line-34",
+    "chapter": 4,
+    "seconds": 7,
+    "text": "Drop a ball at the top, let it bounce left or right at every peg, and it lands in one of the bins along the bottom.",
+    "original": "Drop a ball at the top, let it bounce left or right at every peg, and it lands in one of the bins along the bottom."
+  },
+  {
+    "n": 35,
+    "file": "line-35",
+    "chapter": 4,
+    "seconds": 7.6,
+    "text": "Drop a few hundred and the bins fill into a bell curve. Nobody designs that curve. It falls out of the bouncing.",
+    "original": "Drop a few hundred and the bins fill into a bell curve. Nobody designs that curve. It falls out of the bouncing."
+  },
+  {
+    "n": 36,
+    "file": "line-36",
+    "chapter": 4,
+    "seconds": 8,
+    "text": "Now the interesting version. Keep only the balls that landed at the far right. The freak results, the ones that went right nearly every time.",
+    "original": "Now the interesting version. Keep only the balls that landed at the far right. The freak results, the ones that went right nearly every time."
+  },
+  {
+    "n": 37,
+    "file": "line-37",
+    "chapter": 4,
+    "seconds": 4.6,
+    "text": "Drop each of them again from where it sits.",
+    "original": "Drop each of them again from where it sits."
+  },
+  {
+    "n": 38,
+    "file": "line-38",
+    "chapter": 4,
+    "seconds": 5,
+    "text": "They come back toward the middle, and they come back hard.",
+    "original": "They come back toward the middle, and they come back hard."
+  },
+  {
+    "n": 39,
+    "file": "line-39",
+    "chapter": 4,
+    "seconds": 9.4,
+    "text": "A person is that box with one change. Some of the pegs are nailed down. Genes, nutrition, the family, the era. Those are set the same way for the child.",
+    "original": "A person is that box with one change. Some of the pegs are nailed down. Genes, nutrition, the family, the era. Those are set the same way for the child."
+  },
+  {
+    "n": 40,
+    "file": "line-40",
+    "chapter": 4,
+    "seconds": 5.4,
+    "text": "The rest reset. Luck has no memory, so on average it comes back as zero.",
+    "original": "The rest reset. Luck has no memory, so on average it comes back as zero."
+  },
+  {
+    "n": 41,
+    "file": "line-41",
+    "chapter": 4,
+    "seconds": 10.6,
+    "text": "Which is why the effect scales with how extreme the parent was. An average man's height contains almost no luck to hand back. A one in three thousand man's height is mostly luck, and nearly all of it goes back in the box.",
+    "original": "Which is why the effect scales with how extreme the parent was. An average man's height contains almost no luck to hand back. A one in three thousand man's height is mostly luck, and nearly all of it goes back in the box."
+  },
+  {
+    "n": 42,
+    "file": "line-42",
+    "chapter": 5,
+    "seconds": 6.4,
+    "text": "So we went looking for families where both generations left a number behind. Sport, politics and money.",
+    "original": "So we went looking for families where both generations left a number behind. Sport, politics and money."
+  },
+  {
+    "n": 43,
+    "file": "line-43",
+    "chapter": 5,
+    "seconds": 7.4,
+    "text": "A quarterback, a prime minister and a department store fortune do not share a unit. So we gave them one.",
+    "original": "A quarterback, a prime minister and a department store fortune do not share a unit. So we gave them one."
+  },
+  {
+    "n": 44,
+    "file": "line-44",
+    "chapter": 5,
+    "seconds": 7.6,
+    "text": "Everybody here is placed by how far above their own crowd they sit, against a named reference population. Where that placement is a judgement rather than a measurement, the bar around it says so.",
+    "original": "Everybody here is placed by how far above their own crowd they sit, against a named reference population. Where that placement is a judgement rather than a measurement, the bar around it says so."
+  },
+  {
+    "n": 45,
+    "file": "line-45",
+    "chapter": 5,
+    "seconds": 6.4,
+    "text": "Forty families. Every row is one family, with the parent who stood furthest out at the top.",
+    "original": "Forty families. Every row is one family, with the parent who stood furthest out at the top."
+  },
+  {
+    "n": 46,
+    "file": "line-46",
+    "chapter": 5,
+    "seconds": 5.6,
+    "text": "twenty fell. thirteen rose. seven came out exactly level.",
+    "original": "20 fell. 13 rose. 7 came out exactly level."
+  },
+  {
+    "n": 47,
+    "file": "line-47",
+    "chapter": 5,
+    "seconds": 8.4,
+    "text": "The line fitted through them has a slope of zero point six two. A generation hands back about thirty eight percent of whatever the parent was above the mean.",
+    "original": "The line fitted through them has a slope of 0.62. A generation hands back about 38 per cent of whatever the parent was above the mean."
+  },
+  {
+    "n": 48,
+    "file": "line-48",
+    "chapter": 5,
+    "seconds": 9,
+    "text": "Which brings up the family everyone reaches for. Dell Curry played sixteen seasons and was one of the better shooters of his time. His son holds the three point records.",
+    "original": "Which brings up the family everyone reaches for. Dell Curry played sixteen seasons and was one of the better shooters of his time. His son holds the three point records."
+  },
+  {
+    "n": 49,
+    "file": "line-49",
+    "chapter": 5,
+    "seconds": 5.4,
+    "text": "Stephen Curry did not break the rule. He shows the half of it that people forget.",
+    "original": "Stephen Curry did not break the rule. He shows the half of it that people forget."
+  },
+  {
+    "n": 50,
+    "file": "line-50",
+    "chapter": 5,
+    "seconds": 8,
+    "text": "Regression runs toward the mean, not downward. Dell Curry sat close enough to the middle that most of the league's ceiling was still above him.",
+    "original": "Regression runs toward the mean, not downward. Dell Curry sat close enough to the middle that most of the league's ceiling was still above him."
+  },
+  {
+    "n": 51,
+    "file": "line-51",
+    "chapter": 5,
+    "seconds": 7.6,
+    "text": "LeBron James has nothing above him. That is not a claim about his son. It is a claim about anyone's son, given that father.",
+    "original": "LeBron James has nothing above him. That is not a claim about his son. It is a claim about anyone's son, given that father."
+  },
+  {
+    "n": 52,
+    "file": "line-52",
+    "chapter": 6,
+    "seconds": 5.6,
+    "text": "Can the advantage actually be handed over? That turns out to be the whole question.",
+    "original": "Can the advantage actually be handed over? That turns out to be the whole question."
+  },
+  {
+    "n": 53,
+    "file": "line-53",
+    "chapter": 6,
+    "seconds": 9.2,
+    "text": "A jump shot cannot. Neither can a growth spurt that arrived at the right age, or whatever it was that made one book sell. Those get rolled again in the child.",
+    "original": "A jump shot cannot. Neither can a growth spurt that arrived at the right age, or whatever it was that made one book sell. Those get rolled again in the child."
+  },
+  {
+    "n": 54,
+    "file": "line-54",
+    "chapter": 6,
+    "seconds": 7.2,
+    "text": "A surname can. So can a donor list, a school place, a trust, and a set of phone numbers that get returned.",
+    "original": "A surname can. So can a donor list, a school place, a trust, and a set of phone numbers that get returned."
+  },
+  {
+    "n": 55,
+    "file": "line-55",
+    "chapter": 6,
+    "seconds": 5.4,
+    "text": "Start each family with a hundred units of advantage and watch what is left.",
+    "original": "Start each family with a hundred units of advantage and watch what is left."
+  },
+  {
+    "n": 56,
+    "file": "line-56",
+    "chapter": 6,
+    "seconds": 7,
+    "text": "Height halves in under a generation. By the great grandchildren there is almost nothing left to inherit.",
+    "original": "Height halves in under a generation. By the great grandchildren there is almost nothing left to inherit."
+  },
+  {
+    "n": 57,
+    "file": "line-57",
+    "chapter": 6,
+    "seconds": 9,
+    "text": "Social standing, tracked through rare surnames across three hundred years, takes two point four generations to halve. Same arithmetic, a much slower clock.",
+    "original": "Social standing, tracked through rare surnames across three hundred years, takes 2.4 generations to halve. Same arithmetic, a much slower clock."
+  },
+  {
+    "n": 58,
+    "file": "line-58",
+    "chapter": 6,
+    "seconds": 9.8,
+    "text": "That is the difference between the Adamses and the Vanderbilts. John Quincy Adams inherited the part that transfers. A name people already trusted, and a father who knew everyone worth knowing.",
+    "original": "That is the difference between the Adamses and the Vanderbilts. John Quincy Adams inherited the part that transfers. A name people already trusted, and a father who knew everyone worth knowing."
+  },
+  {
+    "n": 59,
+    "file": "line-59",
+    "chapter": 6,
+    "seconds": 8.2,
+    "text": "The Vanderbilt heirs inherited money, which also transfers. But they inherited it in slices, and slices divide again in the generation after that.",
+    "original": "The Vanderbilt heirs inherited money, which also transfers. But they inherited it in slices, and slices divide again in the generation after that."
+  },
+  {
+    "n": 60,
+    "file": "line-60",
+    "chapter": 6,
+    "seconds": 7,
+    "text": "It is also why we can name every sporting dynasty. The thing that made the parent famous was mostly the part that resets.",
+    "original": "It is also why we can name every sporting dynasty. The thing that made the parent famous was mostly the part that resets."
+  },
+  {
+    "n": 61,
+    "file": "line-61",
+    "chapter": 7,
+    "seconds": 4.8,
+    "text": "There is a hole in every chart of famous families, including this one.",
+    "original": "There is a hole in every chart of famous families, including this one."
+  },
+  {
+    "n": 62,
+    "file": "line-62",
+    "chapter": 7,
+    "seconds": 4.8,
+    "text": "To be on it you have to be measurable, and so does your child.",
+    "original": "To be on it you have to be measurable, and so does your child."
+  },
+  {
+    "n": 63,
+    "file": "line-63",
+    "chapter": 7,
+    "seconds": 9.2,
+    "text": "The son of an en bee ay player who was very good in high school and then quietly stopped being remarkable is not a low dot on the chart. He is not on the chart.",
+    "original": "The son of an NBA player who was very good in high school and then quietly stopped being remarkable is not a low dot on the chart. He is not on the chart."
+  },
+  {
+    "n": 64,
+    "file": "line-64",
+    "chapter": 7,
+    "seconds": 6.2,
+    "text": "These are the pairs anyone can plot. Both generations famous enough to leave a number behind.",
+    "original": "These are the pairs anyone can plot. Both generations famous enough to leave a number behind."
+  },
+  {
+    "n": 65,
+    "file": "line-65",
+    "chapter": 7,
+    "seconds": 7.2,
+    "text": "Now the ones nobody plots. Each faint mark is a child who never became measurable, so the data never saw them.",
+    "original": "Now the ones nobody plots. Each faint mark is a child who never became measurable, so the data never saw them."
+  },
+  {
+    "n": 66,
+    "file": "line-66",
+    "chapter": 7,
+    "seconds": 8.2,
+    "text": "Almost half of them. The line through everything sits well below the line through the survivors.",
+    "original": "Almost half of them. The line through everything sits well below the line through the survivors."
+  },
+  {
+    "n": 67,
+    "file": "line-67",
+    "chapter": 7,
+    "seconds": 7.4,
+    "text": "So the visible pairs understate the effect, always, in the same direction. The chart anyone can draw is a survivor's chart.",
+    "original": "So the visible pairs understate the effect, always, in the same direction. The chart anyone can draw is a survivor's chart."
+  },
+  {
+    "n": 68,
+    "file": "line-68",
+    "chapter": 8,
+    "seconds": 3.8,
+    "text": "One more story, and then we are done.",
+    "original": "One more story, and then we are done."
+  },
+  {
+    "n": 69,
+    "file": "line-69",
+    "chapter": 8,
+    "seconds": 8.6,
+    "text": "Daniel Kahneman once tried to teach a group of flight instructors that praise works better than punishment. They pushed back, and they had evidence.",
+    "original": "Daniel Kahneman once tried to teach a group of flight instructors that praise works better than punishment. They pushed back, and they had evidence."
+  },
+  {
+    "n": 70,
+    "file": "line-70",
+    "chapter": 8,
+    "seconds": 9.2,
+    "text": "Every cadet praised for a beautiful landing flew worse the next time. Every cadet screamed at after a bad one improved. They had watched it happen for years.",
+    "original": "Every cadet praised for a beautiful landing flew worse the next time. Every cadet screamed at after a bad one improved. They had watched it happen for years."
+  },
+  {
+    "n": 71,
+    "file": "line-71",
+    "chapter": 8,
+    "seconds": 5.2,
+    "text": "They were describing regression to the mean and calling it a management technique.",
+    "original": "They were describing regression to the mean and calling it a management technique."
+  },
+  {
+    "n": 72,
+    "file": "line-72",
+    "chapter": 8,
+    "seconds": 9.2,
+    "text": "Nothing the instructor said mattered. An exceptional landing is partly luck, and the next one sits closer to the cadet's real ability whatever anyone shouted in between.",
+    "original": "Nothing the instructor said mattered. An exceptional landing is partly luck, and the next one sits closer to the cadet's real ability whatever anyone shouted in between."
+  },
+  {
+    "n": 73,
+    "file": "line-73",
+    "chapter": 8,
+    "seconds": 4.2,
+    "text": "The shouting was being rewarded by arithmetic.",
+    "original": "The shouting was being rewarded by arithmetic."
+  },
+  {
+    "n": 74,
+    "file": "line-74",
+    "chapter": 8,
+    "seconds": 10.6,
+    "text": "Those instructors were not fools. They were doing the thing everybody does. We are built to find the cause of a change, and a change with no cause in it is close to impossible to hold in your head.",
+    "original": "Those instructors were not fools. They were doing the thing everybody does. We are built to find the cause of a change, and a change with no cause in it is close to impossible to hold in your head."
+  },
+  {
+    "n": 75,
+    "file": "line-75",
+    "chapter": 8,
+    "seconds": 8.6,
+    "text": "So when a famous man's son measures five point seven five inches shorter, the explanation reaches for effort, or nerve, or the weight of the father's name.",
+    "original": "So when a famous man's son measures 5.75 inches shorter, the explanation reaches for effort, or nerve, or the weight of the father's name."
+  },
+  {
+    "n": 76,
+    "file": "line-76",
+    "chapter": 8,
+    "seconds": 5.2,
+    "text": "The arithmetic has no villain in it. That is the main reason it loses.",
+    "original": "The arithmetic has no villain in it. That is the main reason it loses."
+  },
+  {
+    "n": 77,
+    "file": "line-77",
+    "chapter": 8,
+    "seconds": 10,
+    "text": "Regression to the mean never said the child would be unremarkable. It said the child would be less extreme than the parent, on average, by an amount you can work out in advance.",
+    "original": "Regression to the mean never said the child would be unremarkable. It said the child would be less extreme than the parent, on average, by an amount you can work out in advance."
+  },
+  {
+    "n": 78,
+    "file": "line-78",
+    "chapter": 8,
+    "seconds": 9,
+    "text": "Bronny James is taller than about ninety three percent of American men, and plays in the best basketball league in the world. Whatever that is, it is not a fall.",
+    "original": "Bronny James is taller than about 93 per cent of American men, and plays in the best basketball league in the world. Whatever that is, it is not a fall."
+  },
+  {
+    "n": 79,
+    "file": "line-79",
+    "chapter": 8,
+    "seconds": 6.6,
+    "text": "What the arithmetic knew about him, it knew before he was born. It never knew very much.",
+    "original": "What the arithmetic knew about him, it knew before he was born. It never knew very much."
+  }
+]

@@ -1,0 +1,479 @@
+/* ============================================================================
+   03 · LAYOUT
+   One page grid with three widths, a scrollytelling track, and the furniture
+   around them (hero, section break, footer).
+
+   The page grid is declared once on .wrap. Everything inside it lands in the
+   measure column unless it asks for more:
+
+       .col        the measure, 34rem. Body text lives here.
+       .col-wide   62rem. Charts that need room.
+       .col-full   edge to edge. The hero canvas, the Galton board.
+
+   All three also work standalone, outside .wrap, so a scene that builds its
+   own subtree cannot break by being mounted somewhere unexpected.
+   ========================================================================== */
+
+/* ── The reserved chrome band ──────────────────────────────────────────────
+   Two things sit outside the reading flow and above everything: the reading
+   progress rule and the theme toggle. They used to float on top of the page in
+   a fixed box with no media query and no reserved space, and below desktop
+   there is no side margin for them to float into, so the toggle landed on the
+   SPORT segment in dynasties, on the "r = 1.0" header in traits, on the "the
+   father" annotation in engine and on the fig-title in board.
+
+   A fixed overlay cannot be made safe by nudging it. So the page reserves a
+   band: --chrome-h of empty paper above <main>, at every width. The toggle
+   lives inside that band and can never reach a figure.                       */
+:root { --chrome-h: 2.75rem; }
+main { padding-top: var(--chrome-h); }
+
+/* Anchor jumps must clear the band as well as the heading. */
+html { scroll-padding-top: calc(var(--chrome-h) + var(--s-4)); }
+
+/* ── Reading progress ──────────────────────────────────────────────────────
+   js/90-boot.js inserts the <progress> and gives it a defensive baseline in a
+   <style> ahead of this sheet. These are the real values.
+
+   It was 3px of currentColor, which is pure ink: the single heaviest rule on
+   the page, and because it is fixed at the top of the viewport it struck
+   through whatever happened to be up there (it cut the tablet dynasties
+   headline in half). Now: 2px of accent riding on a faint track, and the band
+   above means it has nothing to strike through anyway. The strike-through
+   detector in the audit only tests SVG <line>, so it never saw this one.     */
+#rtm-reading-progress {
+  height: 2px;
+  z-index: 62;
+  background: var(--rule-soft);
+  color: var(--accent, var(--outlier));
+  /* A paper hairline under it, so that when the page scrolls behind it the rule
+     reads as chrome sitting on top of the page rather than as a mark inside a
+     line of text. */
+  box-shadow: 0 1px 0 var(--paper);
+}
+#rtm-reading-progress::-webkit-progress-bar { background: var(--rule-soft); }
+#rtm-reading-progress::-webkit-progress-value { background: var(--accent, var(--outlier)); }
+#rtm-reading-progress::-moz-progress-bar { background: var(--accent, var(--outlier)); }
+
+/* Both inner widths are capped by the container, not by a raw rem value. A
+   fixed track max in a grid that also has 1fr tracks is sized BEFORE the flex
+   tracks, so at 390px the measure track happily takes its full 34rem and
+   shoves the page sideways. Everything below is bounded with min(). */
+.wrap {
+  --pad: var(--gutter);
+  --w-col:  min(var(--measure), 100% - var(--pad) * 2);
+  --w-wide: min(var(--wide),    100% - var(--pad) * 2);
+  --w-flank: minmax(0, calc((var(--w-wide) - var(--w-col)) / 2));
+
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--pad), 1fr)
+    [wide-start] var(--w-flank)
+    [col-start]  var(--w-col)
+    [col-end]    var(--w-flank)
+    [wide-end]   minmax(var(--pad), 1fr)
+    [full-end];
+}
+.wrap > * { grid-column: col-start / col-end; min-width: 0; }
+
+/* Standalone fallbacks. Inside .wrap the grid placement below overrides them. */
+.col      { width: 100%; max-width: var(--measure); margin-inline: auto; }
+.col-wide { width: 100%; max-width: var(--wide);    margin-inline: auto; }
+.col-full { width: 100vw; max-width: 100vw; margin-inline: calc(50% - 50vw); }
+
+.wrap > .col      { grid-column: col-start / col-end;  max-width: none; margin-inline: 0; }
+.wrap > .col-wide { grid-column: wide-start / wide-end; max-width: none; margin-inline: 0; }
+.wrap > .col-full { grid-column: full-start / full-end; width: auto; max-width: none; margin-inline: 0; }
+
+/* Outside the grid, .col and .col-wide still need their gutters. */
+:not(.wrap) > .col,
+:not(.wrap) > .col-wide { padding-inline: var(--gutter); }
+
+/* ── One left rail for the essay and the figures ───────────────────────────
+   Measured at 1440: the hero headline started at x 48, essay paragraphs at
+   x 480 and every figure at x 228. Three unrelated left edges on one page, and
+   the eye has to re-find the start of the line twice on the way down.
+
+   The essay column keeps its 34rem measure but stops centring itself: the box
+   widens to the figure's box and the text is pinned to its left edge, so the
+   prose and the charts start on the same rail. That leaves two edges, the rail
+   and the hero, and the hero is deliberately off-rail because it is a poster.
+
+   The hero's own column is excluded: its placement is owned by
+   css/05-integration.css and this must not fight it.                         */
+@media (min-width: 48rem) {
+  :not(.wrap):not(.hero) > .col { max-width: var(--wide); }
+  :not(.wrap):not(.hero) > .col > * { max-width: calc(var(--measure) - var(--gutter) * 2); }
+}
+
+/* Vertical rhythm between story blocks. Consecutive text blocks sit closer
+   than a text block next to a figure. */
+.wrap > * + * { margin-top: var(--s-5); }
+.wrap > .col + .col { margin-top: 0; }
+.wrap > .col-wide + .col,
+.wrap > .col + .col-wide,
+.wrap > .col-full + .col,
+.wrap > .col + .col-full { margin-top: var(--rhythm); }
+
+/* ── Section ───────────────────────────────────────────────────────────────
+   A titled chunk of the story. The number in the corner is set by the shell
+   as text, not by a counter, so a screen reader reads it in order.          */
+.section { padding-block: var(--rhythm) 0; }
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-4);
+  border-top: 1px solid var(--ink);
+  padding-top: var(--s-3);
+  margin-bottom: var(--s-5);
+}
+.section-num {
+  font-family: var(--mono);
+  font-size: var(--fs-micro);
+  font-weight: var(--wt-med);
+  letter-spacing: var(--tr-micro);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  flex: 0 0 auto;
+  padding-top: 0.35em;
+}
+.section-head h2 { margin: 0; flex: 1 1 auto; min-width: 0; }
+
+/* Below about 30rem the number beside the heading squeezes it to one word a
+   line. Stack them instead. */
+@media (max-width: 30rem) {
+  .section-head { display: block; }
+  .section-num { padding-top: 0; margin-bottom: var(--s-2); display: block; }
+}
+
+/* A quiet break between acts: three small marks, not a rule. */
+.break {
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  padding-block: var(--rhythm);
+}
+.break i {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--rule);
+  display: block;
+}
+.break i:nth-child(2) { background: var(--ink-3); }
+
+/* ── Hero ──────────────────────────────────────────────────────────────────
+   Full bleed. The scene canvas sits behind, the title block sits on top and
+   is pinned to the bottom left so the particle field has the upper air.     */
+.hero {
+  position: relative;
+  min-height: min(92svh, 60rem);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  isolation: isolate;
+  overflow: clip;
+}
+.hero > .stage,
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  grid-row: 2;
+  width: 100%;
+  max-width: var(--wide);
+  margin-inline: auto;
+  padding: var(--s-6) var(--gutter) var(--s-8);
+}
+.hero h1 { max-width: 16ch; }
+.hero .lede { max-width: 46ch; margin-top: var(--s-5); }
+
+/* The byline is a sentence, not a data strip. Set in mono at 11px with 0.06em
+   tracking it ran to six lines under the headline and read as a terminal
+   banner: the loudest thing in the hero after the title, for the least
+   important information in it. Sans, small, quiet, three lines.              */
+.byline {
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--ink-3);
+  border-top: 1px solid var(--rule);
+  padding-top: var(--s-3);
+  margin: var(--s-5) 0 0;
+  max-width: 56ch;
+  text-wrap: pretty;
+}
+
+/* A scroll cue that removes itself once the reader has scrolled. */
+.scroll-cue {
+  position: absolute;
+  z-index: 1;
+  bottom: var(--s-3);
+  right: var(--gutter);
+  font-family: var(--mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--tr-micro);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  transition: opacity var(--dur-3) var(--ease-soft);
+}
+.scroll-cue[data-dim="true"] { opacity: 0; }
+
+/* ── Scrollytelling track ──────────────────────────────────────────────────
+   Grid, not position hacks. The graphic occupies column 1 and sticks; the
+   steps occupy column 2 and scroll past it. Both are real grid children, so
+   the track ends when the steps end and nothing overshoots.
+
+   Under 900px, or under prefers-reduced-motion, the whole thing collapses to
+   a single stacked column with the graphic first and no stickiness at all.  */
+.scrolly {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-5);
+  padding-block: var(--s-6) var(--rhythm);
+}
+
+.scrolly-fig,
+.scrolly > .stage {
+  position: relative;
+  align-self: start;
+  min-width: 0;
+}
+
+.scrolly-steps {
+  display: grid;
+  gap: 0;
+  min-width: 0;
+}
+
+/* One step. Generous space above and below so exactly one is in the middle
+   of the viewport at a time. */
+.step {
+  padding-block: var(--s-6);
+  transition: opacity var(--dur-3) var(--ease-soft);
+}
+.step > * { max-width: 34rem; }
+.step p { font-size: var(--fs-body); }
+.step:first-child { padding-top: var(--s-4); }
+.step:last-child  { padding-bottom: var(--s-4); }
+/* In the stacked layout no step is the live one, so nothing is dimmed. The
+   dim state only makes sense when a graphic is pinned beside the steps. */
+.step[data-dim="true"] { opacity: 1; }
+
+/* The shell puts .step blocks straight inside .scrolly with no .scrolly-steps
+   wrapper, so once css/05-integration.css turned the track into a plain block
+   they inherited padding-block: 0 and max-width: none. Measured at 1440: four
+   "how to read" sentences at 928px, which is nearly twice the essay measure,
+   with literally zero space between them, because a single <p> is also
+   :last-child and loses its bottom margin.
+
+   Scoped with the child combinator so it outranks css/05-integration.css's
+   bare `.step` without editing it.                                           */
+.scrolly > .step { padding-block: 0; }
+.scrolly > .step + .step { margin-top: var(--s-4); }
+.scrolly > .stage + .step,
+.scrolly > .scrolly-fig + .step { margin-top: var(--s-5); }
+.scrolly > .step > * { max-width: calc(var(--measure) - var(--gutter) * 2); }
+
+/* Wide: two columns, graphic sticky. */
+@media (min-width: 56.25rem) {
+  .scrolly {
+    grid-template-columns: minmax(0, 1fr) minmax(17rem, 23rem);
+    gap: 0 var(--s-7);
+    align-items: start;
+  }
+  /* Pinned near the top rather than vertically centred. Centring needs the
+     figure's height, which the scene does not know until it has drawn, and a
+     graphic that is taller than the viewport centres itself off screen. */
+  .scrolly-fig,
+  .scrolly > .stage {
+    position: sticky;
+    top: clamp(1rem, 7svh, 3.5rem);
+    max-height: 86svh;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .scrolly-steps {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .step {
+    padding-block: 42svh;
+  }
+  .step:first-child { padding-top: 22svh; }
+  .step:last-child  { padding-bottom: 34svh; }
+  .step[data-dim="true"] { opacity: 0.38; }
+
+  /* Graphic on the right instead. Same markup, one class. */
+  .scrolly-right { grid-template-columns: minmax(17rem, 23rem) minmax(0, 1fr); }
+  .scrolly-right > .scrolly-fig,
+  .scrolly-right > .stage { grid-column: 2; }
+  .scrolly-right > .scrolly-steps { grid-column: 1; }
+}
+
+/* Reduced motion, or a narrow screen: no sticking, no dimming, plain reading
+   order. The scene still draws; it just does not follow the scroll. */
+@media (prefers-reduced-motion: reduce) {
+  .scrolly {
+    grid-template-columns: 1fr !important;
+    gap: var(--s-5) !important;
+  }
+  .scrolly-fig,
+  .scrolly > .stage,
+  .scrolly-steps {
+    position: static !important;
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+  .step { padding-block: var(--s-5) !important; opacity: 1 !important; }
+  .step[data-dim="true"] { opacity: 1 !important; }
+}
+
+/* ── Stage: the scene mount itself ─────────────────────────────────────────
+   Supplied by shell.html. It is only a box. Everything inside is built by the
+   scene module, so this rule stays deliberately thin.                       */
+.stage {
+  position: relative;
+  min-width: 0;
+  display: block;
+}
+/* A stage that has not booted yet must not collapse the layout under it. */
+.stage:empty { min-height: 12rem; }
+
+/* A stage pinned inside a scrolly track gets the sticky edge treatment, so a
+   reader can see where the graphic ends and the page continues. */
+@media (min-width: 56.25rem) {
+  .scrolly > .stage,
+  .scrolly-fig {
+    background: var(--paper);
+    border-radius: var(--r-3);
+  }
+  .scrolly > .stage::after,
+  .scrolly-fig::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    box-shadow: var(--shadow-sticky);
+    opacity: 0.9;
+  }
+}
+
+/* ── Full page texture overlays (built by js/02-texture.js) ────────────────
+   Fixed, non interactive, never in the tab order, and both blend neutrally so
+   the grain does not tint the page in either theme.                         */
+.rtm-grain,
+.rtm-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  user-select: none;
+}
+.rtm-grain {
+  opacity: var(--grain-op);
+  mix-blend-mode: soft-light;
+}
+/* The vignette paints in --vignette-col, which is dark in both themes, so
+   multiply is correct either way. */
+.rtm-vignette {
+  opacity: var(--vignette-op);
+  mix-blend-mode: multiply;
+}
+/* The defs carrier holds patterns and filters and is never rendered. */
+#rtm-defs {
+  position: absolute;
+  width: 0; height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ── Theme toggle ──────────────────────────────────────────────────────────
+   A 36px icon button, centred in the reserved band at the top of the page. It
+   was a full width "Dark mode" pill of the default .btn kind, 104px across.
+
+   ABSOLUTE, not fixed. This is the whole fix. A fixed control sits at the top
+   right of the VIEWPORT, so reserving space at the top of the DOCUMENT protects
+   the first screen and nothing after it: every figure the reader scrolls past
+   still travels underneath. Absolute puts it in the band and leaves it there,
+   and the band is empty paper by construction, so there is no width and no
+   scroll position at which it can reach a chart. The cost is that it scrolls
+   away with the masthead, which is where a theme control belongs.
+
+   The icon shows the ACTION, not the state: a moon while the light theme is on,
+   a sun while the dark one is. The state is carried by aria-pressed and by the
+   accessible name, which js/90-boot.js keeps in step, so a reader who cannot
+   see the glyph is not told "dark mode" while dark mode is already running.  */
+.theme-toggle {
+  position: absolute;
+  top: calc((var(--chrome-h) - 2.25rem) / 2);
+  right: clamp(0.7rem, 2.2vw, 1.5rem);
+  z-index: 71;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem; height: 2.25rem;
+  padding: 0;
+  border-radius: var(--r-pill);
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  color: var(--ink-2);
+  box-shadow: var(--shadow-chip);
+  cursor: pointer;
+  transition: background var(--dur-1) var(--ease-soft),
+              color var(--dur-1) var(--ease-soft);
+}
+.theme-toggle:hover { background: var(--paper-3); color: var(--ink); }
+.theme-toggle:active { box-shadow: var(--press-in); }
+/* The one ring, spelled out here too: this control sits on paper of its own and
+   an outline that only exists in 02-base.css is one !important away from
+   disappearing. */
+.theme-toggle:focus-visible {
+  outline: 2.5px solid var(--focus);
+  outline-offset: 2px;
+  color: var(--ink);
+}
+.theme-toggle svg { width: 1.05rem; height: 1.05rem; display: block; }
+.theme-toggle .ico-sun { display: none; }
+.theme-toggle[aria-pressed="true"] .ico-sun { display: inline; }
+.theme-toggle[aria-pressed="true"] .ico-moon { display: none; }
+
+/* ── Footer ────────────────────────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--rule);
+  margin-top: var(--rhythm);
+  padding-block: var(--s-6) var(--s-8);
+  font-size: var(--fs-sm);
+  color: var(--ink-3);
+}
+.footer h3 {
+  font-size: var(--fs-micro);
+  font-family: var(--mono);
+  letter-spacing: var(--tr-micro);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 var(--s-3);
+  font-weight: var(--wt-med);
+}
+.footer ol { padding-left: 1.4em; }
+.footer li { margin-bottom: 0.55em; line-height: 1.45; }
+.footer a { text-decoration-color: var(--rule); }
+.footer a:hover { text-decoration-color: var(--mean); }
+
+/* ── Reveal on scroll. Opt in with .reveal; the shell sets .in. ────────────
+   A full page screenshot never scrolls, so the harness forces .in on before
+   capture. Under reduced motion the class does nothing at all.              */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 620ms var(--ease-out), transform 620ms var(--ease-out);
+}
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; }
+}

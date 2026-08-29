@@ -1,0 +1,529 @@
+{
+  "duration": "14:13",
+  "chapters": [
+    {
+      "n": 1,
+      "title": "The Commodore",
+      "t": 0,
+      "clock": "0:00"
+    },
+    {
+      "n": 2,
+      "title": "Galton’s disappointment",
+      "t": 118.3,
+      "clock": "1:58"
+    },
+    {
+      "n": 3,
+      "title": "One multiplication",
+      "t": 245.6,
+      "clock": "4:06"
+    },
+    {
+      "n": 4,
+      "title": "The box with pegs in it",
+      "t": 350.3,
+      "clock": "5:50"
+    },
+    {
+      "n": 5,
+      "title": "Forty families",
+      "t": 439.7,
+      "clock": "7:20"
+    },
+    {
+      "n": 6,
+      "title": "What can be handed over",
+      "t": 550.9,
+      "clock": "9:11"
+    },
+    {
+      "n": 7,
+      "title": "The children nobody plots",
+      "t": 654.5,
+      "clock": "10:54"
+    },
+    {
+      "n": 8,
+      "title": "The flight instructors",
+      "t": 718.9,
+      "clock": "11:59"
+    }
+  ],
+  "captions": [
+    {
+      "n": 1,
+      "t": 1,
+      "clock": "0:01",
+      "text": "In 1877, Cornelius Vanderbilt died the richest man in America."
+    },
+    {
+      "n": 2,
+      "t": 7.9,
+      "clock": "0:08",
+      "text": "He was worth about 105 million dollars, at a time when there were nine"
+    },
+    {
+      "n": 3,
+      "t": 22.9,
+      "clock": "0:23",
+      "text": "He left almost all of it to one son, deliberately, to keep it whole. T"
+    },
+    {
+      "n": 4,
+      "t": 33.2,
+      "clock": "0:33",
+      "text": "Then the fortune was split eight ways. The eldest got the biggest shar"
+    },
+    {
+      "n": 5,
+      "t": 45.3,
+      "clock": "0:45",
+      "text": "The generation after that received five million in trust, and spent mo"
+    },
+    {
+      "n": 6,
+      "t": 53.8,
+      "clock": "0:54",
+      "text": "And in 2019, Gloria Vanderbilt died with an estate reported at under o"
+    },
+    {
+      "n": 7,
+      "t": 69.1,
+      "clock": "1:09",
+      "text": "Ninety six years after the Commodore died, the family held its first r"
+    },
+    {
+      "n": 8,
+      "t": 84.5,
+      "clock": "1:24",
+      "text": "The usual explanation is spending. Marble houses, yachts, a family tha"
+    },
+    {
+      "n": 9,
+      "t": 95.6,
+      "clock": "1:36",
+      "text": "There is truth in that, and it makes a good book."
+    },
+    {
+      "n": 10,
+      "t": 100.6,
+      "clock": "1:41",
+      "text": "But the same shape turns up in families that spent nothing at all. It "
+    },
+    {
+      "n": 11,
+      "t": 113.3,
+      "clock": "1:53",
+      "text": "Something very ordinary is going on."
+    },
+    {
+      "n": 12,
+      "t": 118.9,
+      "clock": "1:59",
+      "text": "In the 1880s a man named Francis Galton set out to prove that greatnes"
+    },
+    {
+      "n": 13,
+      "t": 127.6,
+      "clock": "2:08",
+      "text": "He wanted a hereditary aristocracy of talent, and he went looking for "
+    },
+    {
+      "n": 14,
+      "t": 137.3,
+      "clock": "2:17",
+      "text": "He collected the heights of 928 grown children, along with the heights"
+    },
+    {
+      "n": 15,
+      "t": 150.2,
+      "clock": "2:30",
+      "text": "Each dot is one adult child. Along the bottom, the average of their tw"
+    },
+    {
+      "n": 16,
+      "t": 161.5,
+      "clock": "2:42",
+      "text": "The dashed line is the world most people carry around in their head. C"
+    },
+    {
+      "n": 17,
+      "t": 173.6,
+      "clock": "2:54",
+      "text": "The line the data actually draws is flatter. On the right, among the t"
+    },
+    {
+      "n": 18,
+      "t": 186.7,
+      "clock": "3:07",
+      "text": "Its slope is 0.65. A child kept about two thirds of the parents’ dista"
+    },
+    {
+      "n": 19,
+      "t": 197.9,
+      "clock": "3:18",
+      "text": "Tall parents did have tall children. Just not as tall. Short parents h"
+    },
+    {
+      "n": 20,
+      "t": 207.5,
+      "clock": "3:28",
+      "text": "Every family had drifted back toward the middle while he was not looki"
+    },
+    {
+      "n": 21,
+      "t": 214.8,
+      "clock": "3:35",
+      "text": "He published it in 1886 under a title that still has an edge on it. Re"
+    },
+    {
+      "n": 22,
+      "t": 226.7,
+      "clock": "3:47",
+      "text": "He had gone looking for the dashed line and found the solid one, so he"
+    },
+    {
+      "n": 23,
+      "t": 237.3,
+      "clock": "3:57",
+      "text": "It is the wrong name. Nothing is being pulled anywhere. Nobody is bein"
+    },
+    {
+      "n": 24,
+      "t": 246.3,
+      "clock": "4:06",
+      "text": "The whole effect is one multiplication."
+    },
+    {
+      "n": 25,
+      "t": 250.9,
+      "clock": "4:11",
+      "text": "Take how far the parent sits from average, counted in standard deviati"
+    },
+    {
+      "n": 26,
+      "t": 263.2,
+      "clock": "4:23",
+      "text": "For height, that number is 0.47. An average parent loses nothing, beca"
+    },
+    {
+      "n": 27,
+      "t": 279.8,
+      "clock": "4:40",
+      "text": "LeBron James stands 3.4 standard deviations above the average American"
+    },
+    {
+      "n": 28,
+      "t": 292.8,
+      "clock": "4:53",
+      "text": "Multiply by 0.47 and the expected son comes out at 6 foot 1.9."
+    },
+    {
+      "n": 29,
+      "t": 301.1,
+      "clock": "5:01",
+      "text": "Bronny James measured 6 foot 1.5 barefoot at the draft combine, on the"
+    },
+    {
+      "n": 30,
+      "t": 314.5,
+      "clock": "5:15",
+      "text": "An equation written in 1886, with no knowledge of genetics, missed him"
+    },
+    {
+      "n": 31,
+      "t": 324.8,
+      "clock": "5:25",
+      "text": "Now the honest part. The model does not predict a person. The range fo"
+    },
+    {
+      "n": 32,
+      "t": 338.4,
+      "clock": "5:38",
+      "text": "What it gets right is the centre. The whole crowd of possible sons was"
+    },
+    {
+      "n": 33,
+      "t": 351.1,
+      "clock": "5:51",
+      "text": "Galton also built a wooden box with pegs in it."
+    },
+    {
+      "n": 34,
+      "t": 356.1,
+      "clock": "5:56",
+      "text": "Drop a ball at the top, let it bounce left or right at every peg, and "
+    },
+    {
+      "n": 35,
+      "t": 366,
+      "clock": "6:06",
+      "text": "Drop a few hundred and the bins fill into a bell curve. Nobody designs"
+    },
+    {
+      "n": 36,
+      "t": 376.6,
+      "clock": "6:17",
+      "text": "Now the interesting version. Keep only the balls that landed at the fa"
+    },
+    {
+      "n": 37,
+      "t": 389.2,
+      "clock": "6:29",
+      "text": "Drop each of them again from where it sits."
+    },
+    {
+      "n": 38,
+      "t": 394.6,
+      "clock": "6:35",
+      "text": "They come back toward the middle, and they come back hard."
+    },
+    {
+      "n": 39,
+      "t": 400.2,
+      "clock": "6:40",
+      "text": "A person is that box with one change. Some of the pegs are nailed down"
+    },
+    {
+      "n": 40,
+      "t": 413.9,
+      "clock": "6:54",
+      "text": "The rest reset. Luck has no memory, so on average it comes back as zer"
+    },
+    {
+      "n": 41,
+      "t": 420.6,
+      "clock": "7:01",
+      "text": "Which is why the effect scales with how extreme the parent was. An ave"
+    },
+    {
+      "n": 42,
+      "t": 440.9,
+      "clock": "7:21",
+      "text": "So we went looking for families where both generations left a number b"
+    },
+    {
+      "n": 43,
+      "t": 450.4,
+      "clock": "7:30",
+      "text": "A quarterback, a prime minister and a department store fortune do not "
+    },
+    {
+      "n": 44,
+      "t": 459.7,
+      "clock": "7:40",
+      "text": "Everybody here is placed by how far above their own crowd they sit, ag"
+    },
+    {
+      "n": 45,
+      "t": 476.8,
+      "clock": "7:57",
+      "text": "Forty families. Every row is one family, with the parent who stood fur"
+    },
+    {
+      "n": 46,
+      "t": 485.2,
+      "clock": "8:05",
+      "text": "20 fell. 13 rose. 7 came out exactly level."
+    },
+    {
+      "n": 47,
+      "t": 491.8,
+      "clock": "8:12",
+      "text": "The line fitted through them has a slope of 0.62. A generation hands b"
+    },
+    {
+      "n": 48,
+      "t": 505.9,
+      "clock": "8:26",
+      "text": "Which brings up the family everyone reaches for. Dell Curry played six"
+    },
+    {
+      "n": 49,
+      "t": 520.7,
+      "clock": "8:41",
+      "text": "Stephen Curry did not break the rule. He shows the half of it that peo"
+    },
+    {
+      "n": 50,
+      "t": 527.8,
+      "clock": "8:48",
+      "text": "Regression runs toward the mean, not downward. Dell Curry sat close en"
+    },
+    {
+      "n": 51,
+      "t": 540.4,
+      "clock": "9:00",
+      "text": "LeBron James has nothing above him. That is not a claim about his son."
+    },
+    {
+      "n": 52,
+      "t": 551.7,
+      "clock": "9:12",
+      "text": "Can the advantage actually be handed over? That turns out to be the wh"
+    },
+    {
+      "n": 53,
+      "t": 559.3,
+      "clock": "9:19",
+      "text": "A jump shot cannot. Neither can a growth spurt that arrived at the rig"
+    },
+    {
+      "n": 54,
+      "t": 573.5,
+      "clock": "9:33",
+      "text": "A surname can. So can a donor list, a school place, a trust, and a set"
+    },
+    {
+      "n": 55,
+      "t": 583.3,
+      "clock": "9:43",
+      "text": "Start each family with a hundred units of advantage and watch what is "
+    },
+    {
+      "n": 56,
+      "t": 590.2,
+      "clock": "9:50",
+      "text": "Height halves in under a generation. By the great grandchildren there "
+    },
+    {
+      "n": 57,
+      "t": 599.8,
+      "clock": "9:60",
+      "text": "Social standing, tracked through rare surnames across three hundred ye"
+    },
+    {
+      "n": 58,
+      "t": 613.8,
+      "clock": "10:14",
+      "text": "That is the difference between the Adamses and the Vanderbilts. John Q"
+    },
+    {
+      "n": 59,
+      "t": 630.6,
+      "clock": "10:31",
+      "text": "The Vanderbilt heirs inherited money, which also transfers. But they i"
+    },
+    {
+      "n": 60,
+      "t": 643.8,
+      "clock": "10:44",
+      "text": "It is also why we can name every sporting dynasty. The thing that made"
+    },
+    {
+      "n": 61,
+      "t": 655.3,
+      "clock": "10:55",
+      "text": "There is a hole in every chart of famous families, including this one."
+    },
+    {
+      "n": 62,
+      "t": 661.8,
+      "clock": "11:02",
+      "text": "To be on it you have to be measurable, and so does your child."
+    },
+    {
+      "n": 63,
+      "t": 667.2,
+      "clock": "11:07",
+      "text": "The son of an NBA player who was very good in high school and then qui"
+    },
+    {
+      "n": 64,
+      "t": 681,
+      "clock": "11:21",
+      "text": "These are the pairs anyone can plot. Both generations famous enough to"
+    },
+    {
+      "n": 65,
+      "t": 689.8,
+      "clock": "11:30",
+      "text": "Now the ones nobody plots. Each faint mark is a child who never became"
+    },
+    {
+      "n": 66,
+      "t": 699.7,
+      "clock": "11:40",
+      "text": "Almost half of them. The line through everything sits well below the l"
+    },
+    {
+      "n": 67,
+      "t": 708.5,
+      "clock": "11:49",
+      "text": "So the visible pairs understate the effect, always, in the same direct"
+    },
+    {
+      "n": 68,
+      "t": 719.7,
+      "clock": "11:60",
+      "text": "One more story, and then we are done."
+    },
+    {
+      "n": 69,
+      "t": 723.9,
+      "clock": "12:04",
+      "text": "Daniel Kahneman once tried to teach a group of flight instructors that"
+    },
+    {
+      "n": 70,
+      "t": 736.8,
+      "clock": "12:17",
+      "text": "Every cadet praised for a beautiful landing flew worse the next time. "
+    },
+    {
+      "n": 71,
+      "t": 750.2,
+      "clock": "12:30",
+      "text": "They were describing regression to the mean and calling it a managemen"
+    },
+    {
+      "n": 72,
+      "t": 758.1,
+      "clock": "12:38",
+      "text": "Nothing the instructor said mattered. An exceptional landing is partly"
+    },
+    {
+      "n": 73,
+      "t": 772.7,
+      "clock": "12:53",
+      "text": "The shouting was being rewarded by arithmetic."
+    },
+    {
+      "n": 74,
+      "t": 777.7,
+      "clock": "12:58",
+      "text": "Those instructors were not fools. They were doing the thing everybody "
+    },
+    {
+      "n": 75,
+      "t": 795.2,
+      "clock": "13:15",
+      "text": "So when a famous man’s son measures 5.75 inches shorter, the explanati"
+    },
+    {
+      "n": 76,
+      "t": 808.9,
+      "clock": "13:29",
+      "text": "The arithmetic has no villain in it. That is the main reason it loses."
+    },
+    {
+      "n": 77,
+      "t": 815.4,
+      "clock": "13:35",
+      "text": "Regression to the mean never said the child would be unremarkable. It "
+    },
+    {
+      "n": 78,
+      "t": 830.2,
+      "clock": "13:50",
+      "text": "Bronny James is taller than about 93 per cent of American men, and pla"
+    },
+    {
+      "n": 79,
+      "t": 844.1,
+      "clock": "14:04",
+      "text": "What the arithmetic knew about him, it knew before he was born. It nev"
+    }
+  ]
+}

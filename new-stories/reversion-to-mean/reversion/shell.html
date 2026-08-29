@@ -1,0 +1,240 @@
+<title>Reversion: why the children of the extraordinary land closer to average</title>
+
+<a class="skip-link" href="#main">Skip to the story</a>
+
+<main id="main">
+
+  <header class="hero">
+    <div class="stage col-full" data-scene="hero"></div>
+    <div class="col">
+      <p class="eyebrow">Regression to the mean</p>
+      <h1>Luck is not inherited, which is why the children of extraordinary people land closer to average</h1>
+      <p class="standfirst">An extreme number is part durable and part lucky. The durable part passes down. The luck starts over from zero. Everything below follows from those three sentences.</p>
+      <p class="byline">Built from Galton’s 1886 tally, the NBA Draft Combine, national height surveys, and published estimates of how much each kind of advantage carries across a generation. Sources at the end.</p>
+    </div>
+  </header>
+
+  <div class="col">
+    <p>Cornelius Vanderbilt died in 1877, the richest man in America. He left almost all of it to one son, who nearly doubled it in eight years.</p>
+    <p>Ninety-six years later the family held its first reunion, at the university the Commodore had paid for. A descendant who wrote the family’s history counted the room. Among a hundred and twenty relatives there was not a millionaire.</p>
+    <p>The usual explanation is spending. Marble houses, yachts, a family that stopped building anything and started decorating. There is truth in it, and it makes a good book.</p>
+    <p>But the same shape turns up in families that spent nothing at all. It turns up in height, in exam scores, in batting averages, in second albums. It turned up in a Victorian notebook full of sweet peas, years before anyone had an heir to blame.</p>
+    <p>Something very ordinary is going on.</p>
+  </div>
+
+  <section id="act-galton">
+    <div class="col">
+      <h2>A man set out to prove that greatness breeds greatness, and his own numbers refused</h2>
+      <p>Francis Galton wanted a hereditary aristocracy of talent. He believed exceptional people made exceptional children, and he went looking for the proof in the easiest thing to measure.</p>
+      <p>He collected the heights of <span data-num="galton-n"></span> grown children along with the heights of their parents, and he plotted one against the other.</p>
+      <p>Tall parents did have tall children. Just not as tall. Short parents had short children, and not as short. Every family had drifted back toward the middle while he was not looking.</p>
+    </div>
+
+    <figure class="scrolly col-wide">
+      <div class="stage" data-scene="galton" data-track="scrolly"></div>
+      <div class="step">
+        <p>Each dot is one adult child from Galton’s tally. Along the bottom, the average of their two parents. Up the side, how the child turned out.</p>
+      </div>
+      <div class="step">
+        <p>The dashed line is the world most people carry around in their head. Children match their parents. Every family holds its place.</p>
+      </div>
+      <div class="step">
+        <p>The line the data actually draws is flatter. On the right, among the tall families, it sits below the expectation. On the left it sits above.</p>
+      </div>
+      <div class="step">
+        <p>Its slope is <span data-num="galton-slope"></span>. A child kept about two thirds of the parents’ distance from average and handed the rest back. The correlation is <span data-num="galton-r"></span>.</p>
+      </div>
+      <figcaption class="fig-note">Watch the two lines where they separate, at the far left and the far right. In the middle they agree, which is why the effect is invisible in an ordinary family. Galton scaled his daughters’ heights by 1.08 to compare them with sons. His figures are binned, so the dots are spread within each bin to show density, the same way on every load.</figcaption>
+    </figure>
+
+    <div class="col victorian">
+      <p>He published it in 1886 under a title that still has an edge on it: “Regression towards mediocrity in hereditary stature.”</p>
+    </div>
+
+    <div class="col">
+      <p>He had gone looking for the dashed line and found the solid one, so he named the finding after his own disappointment. The name outlived him by a century.</p>
+      <p>It is the wrong name. Nothing is being pulled anywhere. Nobody is being punished for being tall.</p>
+    </div>
+  </section>
+
+  <section id="act-engine">
+    <div class="col">
+      <h2>The whole effect is one multiplication, and the further out the parent sits, the more it takes away</h2>
+      <p>Take how far the parent sits from average, counted in standard deviations. Multiply by one number. That is where you expect the child to land.</p>
+      <p>For fathers and sons on height, that number is <span data-num="height-r"></span>. An average father loses nothing, because zero multiplied by anything is still zero. That is why nobody notices this happening in their own family.</p>
+    </div>
+
+    <figure class="col-wide reveal">
+      <div class="stage" data-scene="engine"></div>
+      <figcaption class="fig-note">Drag the father. The son’s likely range slides with him, but never as far, and the distance between the two markers is the whole story. Push the father to the edge and watch the distance grow.</figcaption>
+    </figure>
+
+    <div class="col">
+      <p>LeBron James stands <span data-num="lebron-z"></span> above the average American man. Roughly <span data-num="lebron-rarity"></span> men is that tall.</p>
+      <p>Multiply by <span data-num="height-r"></span> and the expected son comes out at <span data-num="pred-height"></span>. Bronny James measured <span data-num="bronny-height"></span> barefoot at the draft combine, on the same instrument that measured his father twenty-one years earlier. The gap between them is <span data-num="gap-inches"></span> inches.</p>
+      <p>An equation written in 1886, with no knowledge of genetics, missed him by <span data-num="pred-error"></span>.</p>
+      <p>Now the honest part. The model does not predict a person. The ninety-five per cent range for any single son spans <span data-num="pi-range"></span>, which is most of the adult male range, and Bronny landing as close to the centre as he did is partly luck. What the model gets right is the centre itself. The whole crowd of possible sons was shifted down, and the size of the shift was fixed before he was born.</p>
+    </div>
+  </section>
+
+  <section id="act-board">
+    <div class="col">
+      <h2>An extreme number is a durable part plus a lucky part, and only one of them has children</h2>
+      <p>Galton built a wooden box with pegs in it. Drop a ball at the top, let it bounce left or right at every peg, and it lands in one of the bins along the bottom. Drop a few hundred and the bins fill into a bell curve.</p>
+      <p>Nobody designs that curve. It falls out of the bouncing.</p>
+      <p>Now do the interesting version. Keep only the balls that landed in the far right bin, the freak results, the ones that went right nearly every time. Drop each of them again from where it sits. They come back toward the middle, and they come back hard.</p>
+    </div>
+
+    <figure class="col-wide reveal">
+      <div class="stage" data-scene="board"></div>
+      <figcaption class="fig-note">The second drop is the one to watch. Nothing pushes the far-right balls back. They return because the run of luck that put them there is not repeated.</figcaption>
+    </figure>
+
+    <div class="col">
+      <p>A person is that box with one change. Some of the pegs are nailed down. Genes, nutrition, the family, the era. Those pegs are set the same way for the child.</p>
+      <p>The rest reset. Luck has no memory, so on average it comes back as zero.</p>
+      <p>Which is why the effect scales with how extreme the parent was. An average man’s height contains almost no luck to hand back. A one-in-three-thousand man’s height is mostly luck, and nearly all of it goes back in the box.</p>
+      <p>The rookie who cools off in his second year. The fund that tops the table and then does not. Every one of them gets a story written about it, and the story usually has a person in it.</p>
+    </div>
+  </section>
+
+  <section id="act-dynasties">
+    <div class="col">
+      <h2>Put every famous parent and child on one axis and the line comes out well under one</h2>
+      <p>A quarterback, a prime minister and a department store fortune do not share a unit. So we gave them one.</p>
+      <p>Everybody here is placed by how far above their own crowd they sit, in standard deviations, against a named reference population that the figure states. Where a placement is a judgement rather than a measurement, the figure says so on its face, and the method note at the end says which ones those are.</p>
+      <p>There are <span data-num="dynasty-n"></span> pairs with a measured number on both generations. The line fitted through them has a slope of <span data-num="dynasty-slope"></span>, and across all <span data-num="dynasty-all"></span> families the children keep about <span data-num="dynasty-kept"></span> of the parent’s distance from average.</p>
+      <p>That is the line you can fit to famous families. It is not an estimate for anyone else. Every pair is here because the parent was extreme enough to be worth picking and the child left a number behind, and choosing on both ends flattens the line before anyone draws it. The children nobody can plot put a size on how much.</p>
+    </div>
+
+    <figure class="scrolly col-wide">
+      <div class="stage" data-scene="dynasties" data-track="scrolly"></div>
+      <div class="step">
+        <p>Every row is one family, with the parent who stood furthest out at the top. The open dot is where the parent stood, the filled dot is where the child ended up, and the side the filled dot sits on tells you which way that family went.</p>
+      </div>
+      <div class="step">
+        <p>Half of these families fell. A third rose, and the rest came out exactly level. The steepest falls do start highest, though the top of the panel is mostly politics and money, so part of that is the field they were in.</p>
+      </div>
+      <div class="step">
+        <p>The rises are not a failure of the rule. They usually mean something was handed over that the child did not have to earn again.</p>
+      </div>
+      <figcaption class="fig-note">Read the slope, not the individual line. Any one family is mostly luck; the tilt of the whole set is the finding. Careers still in progress carry a visible uncertainty band and never move a headline number.</figcaption>
+    </figure>
+
+    <div class="col">
+      <p>Which brings up the family everyone reaches for. Dell Curry played sixteen seasons in the NBA and was one of the better shooters of his time. His son holds the three-point records and has four championships.</p>
+      <p>Stephen Curry did not break the rule. He shows the half of it that people forget.</p>
+      <p>Regression runs toward the mean, not downward. Dell Curry sat close enough to the middle that almost all of the league’s ceiling was still above him, so a son who rolled well had somewhere to roll.</p>
+      <p>LeBron James has nothing above him. That is not a claim about his son. It is a claim about anyone’s son, given that father.</p>
+    </div>
+  </section>
+
+  <section id="act-traits">
+    <div class="col">
+      <h2>The more transferable the advantage, the slower it fades, which is why political families outlast sporting ones</h2>
+      <p>Can any given advantage actually be handed over?</p>
+      <p>A jump shot cannot. Neither can a growth spurt that arrived at the right age, or whatever it was that made one book sell. Those get re-rolled in the child.</p>
+      <p>A surname can. So can a donor list, a school place, a trust, and a set of phone numbers that get returned. Those are handed across intact, and they do not care how the child’s dice came up.</p>
+      <p>So the two kinds of advantage fade at different speeds, and the difference is large enough to measure.</p>
+    </div>
+
+    <figure class="scrolly col-wide">
+      <div class="stage" data-scene="traits" data-track="scrolly"></div>
+      <div class="step">
+        <p>Pick a trait. Each bar is a generation, and each one is the same fraction of the one before it. That fraction is the only input.</p>
+      </div>
+      <div class="step">
+        <p>Height goes fast. So does lifespan, which barely survives contact with the next generation at all.</p>
+      </div>
+      <div class="step">
+        <p>Social standing, tracked by rare surnames across centuries, is still visible in the great-grandchildren. Same arithmetic, a much slower clock.</p>
+      </div>
+      <figcaption class="fig-note">Compare how far along the row each trait is still above the line. The half-life is worked out from the parent-child correlation alone, so it assumes the correlation holds steady across generations, which is a simplification.</figcaption>
+    </figure>
+
+    <div class="col">
+      <p>Earnings pass across at about <span data-num="income-r"></span>. A family’s social standing, followed through rare surnames over several hundred years, passes across at about <span data-num="surname-r"></span>.</p>
+      <p>In half-lives: an advantage in height halves in <span data-num="halflife-height"></span>, an advantage in lifespan in <span data-num="halflife-lifespan"></span>, and a family’s standing takes <span data-num="halflife-surname"></span>.</p>
+      <p>That is the difference between the Adamses and the Vanderbilts. John Quincy Adams inherited the part that transfers, which was a name people already trusted and a father who knew everyone worth knowing. The Vanderbilt heirs inherited money, which also transfers, but they inherited it in slices, and slices divide again in the generation after that.</p>
+      <p>It is also why we can name every sporting dynasty. The thing that made the parent famous was mostly the part that resets.</p>
+      <p>The surname number is argued about. It is high enough that some researchers think it is measuring the persistence of a reputation rather than of anything underneath it. Either way the ranking survives the argument. The more portable the advantage, the longer it lasts.</p>
+    </div>
+  </section>
+
+  <section id="act-survivors">
+    <div class="col">
+      <h2>The chart you can draw leaves out the children who left, so every number here is a floor</h2>
+      <p>There is a hole in every famous-parent chart, including ours.</p>
+      <p>To be on it you have to be measurable, and so does your child. The son of an NBA player who was very good in high school and then quietly stopped being remarkable is not a low dot on the chart. He is not on the chart.</p>
+    </div>
+
+    <figure class="scrolly col-wide">
+      <div class="stage" data-scene="survivors" data-track="scrolly"></div>
+      <div class="step">
+        <p>These are the pairs anyone can plot. Both generations famous enough to leave a number behind.</p>
+      </div>
+      <div class="step">
+        <p>Now the ones nobody plots. Each faint mark is a child who never became measurable, so the data set never saw them.</p>
+      </div>
+      <div class="step">
+        <p>The line through everything sits well below the line through the survivors. The gap between the two is how much a chart of famous pairs flatters the famous.</p>
+      </div>
+      <figcaption class="fig-note">The faint marks are modelled, not observed. That is the point: their positions cannot be measured, because the measuring stops the moment a child stops being interesting. Treat this figure as an argument about what is missing, not as data.</figcaption>
+    </figure>
+
+    <div class="col">
+      <p>The same hole sits under the political and business pairs. A senator’s son who runs a hardware store leaves no trace in a data set about senators.</p>
+      <p>So the visible pairs understate the effect, always, in the same direction. The chart anyone can draw is a survivor’s chart.</p>
+    </div>
+  </section>
+
+  <section id="act-quiz">
+    <div class="col">
+      <h2>Given a parent’s number, almost everyone guesses the child’s too high</h2>
+      <p>Five rounds. You get a parent’s standing and you predict the child’s.</p>
+      <p>Most people put the child much closer to the parent than the arithmetic allows, and they miss hardest on the most extreme parents, which are exactly the ones that make the news.</p>
+    </div>
+
+    <figure class="col-wide reveal">
+      <div class="stage" data-scene="quiz"></div>
+      <figcaption class="fig-note">Watch the direction of your errors rather than the score. Guessing high on every round is the normal result, and it is the same instinct the rest of this piece is about.</figcaption>
+    </figure>
+  </section>
+
+  <section id="kicker">
+    <div class="col">
+      <h2>Shown a number that fell, we go looking for the person who dropped it</h2>
+      <p>Daniel Kahneman once tried to teach a group of flight instructors that praise works better than punishment. They pushed back, and they had evidence.</p>
+      <p>Every cadet praised for a beautiful landing flew worse the next time. Every cadet screamed at after a bad one improved. The instructors had watched it happen for years.</p>
+      <p>They were describing regression to the mean and calling it a management technique.</p>
+      <p>Nothing the instructor said mattered. An exceptional landing is partly luck, and the next one sits closer to the cadet’s real ability whatever anyone shouted in between. The shouting was being rewarded by arithmetic.</p>
+      <p>Those instructors were not fools. They were doing the thing everybody does. We are built to find the cause of a change, and a change with no cause in it is close to impossible to hold in your head.</p>
+      <p>So when a famous man’s son measures <span data-num="gap-inches"></span> inches shorter, the explanation reaches for effort, or nerve, or the weight of the father’s name. The arithmetic has no villain in it, which is the main reason it loses.</p>
+    </div>
+  </section>
+
+  <section id="coda">
+    <div class="col">
+      <h2>Less extreme is not the same as ordinary, and the difference is where nearly everyone lives</h2>
+      <p>Regression to the mean never said the child would be unremarkable. It said the child would be less extreme than the parent, on average, by an amount you can work out in advance.</p>
+      <p>Bronny James is taller than about <span data-num="bronny-pct"></span> of American men and plays in the best basketball league in the world. Whatever that is, it is not a fall.</p>
+      <p>What the arithmetic knew about him, it knew before he was born. It never knew very much.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="col">
+      <h2>Method, and what this piece does not claim</h2>
+      <p>The model is one line long. The expected child, in standard deviations from the mean, is the parent’s standard deviations multiplied by the parent-child correlation for that trait. Nothing else goes in. No parenting, no money, no era.</p>
+      <p>Every person is placed as a z score, meaning standard deviations above the mean of a named reference population. Each figure states which population it is using. A z of 0 is the middle of that population, not the middle of humanity, and the two are rarely the same thing.</p>
+      <h3>Which placements are judgements</h3>
+      <p>Height, career scoring rates and earnings are measurements. The political placements come from a published rubric of offices held, which is an editorial ranking and is printed inside the figure so it can be argued with. The distribution panels that show where a player sits among all players are schematic, and are labelled as such. The children who never became measurable are modelled from an assumed rate of dropping out of the data, not observed, because observing them is the thing that cannot be done. Any child whose career is still running carries an explicit uncertainty band and is kept out of every headline number.</p>
+      <h3>What it does not claim</h3>
+      <p>It does not claim that any individual outcome is predictable. The prediction interval around a single child covers most of the range of ordinary people. It does not claim that regression is a force acting on anyone, or that a child who lands lower did anything wrong, or that the correlations used here are constants of nature. They are estimates from particular populations in particular decades, they differ by country and by cohort, and the surname figure in particular is contested. Half-lives assume a correlation that stays put across generations, which is a convenience rather than a fact.</p>
+      <p>Nothing here is a claim about any living person’s ability, character or future. The whole argument is that the arithmetic runs the same way for everyone, which is what makes it uninteresting as gossip and useful as a habit of mind.</p>
+      <h3>Sources</h3>
+      <div id="sources"></div>
+    </div>
+  </footer>
+
+</main>

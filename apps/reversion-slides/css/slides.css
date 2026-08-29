@@ -1,0 +1,247 @@
+/* ── Reversion presentation deck ────────────────────────────────────────
+   The film's "Instrument" identity, carried onto 16:9 slides: warm near-black
+   instrument case, brass and bone, ledger rules, Instrument Serif for prose
+   and IBM Plex Mono for every number. Matching the film matters here, because
+   the video cuts between this deck and film clips. */
+
+:root {
+  --stage:      #14120E;
+  --stage-deep: #0C0B08;
+  --raise:      #211D15;
+  --ink:        #F2EDE1;
+  --ink-soft:   #BDB49F;
+  --ink-mute:   #7E7663;
+  --accent:     #D9A441;
+  --fall:       #B4472F;
+  --neutral:    #8A8272;
+  --dim:        #3A352A;
+
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-ui:      "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Every size is in cqw so a slide scales exactly with its container,
+     whether that is a projector, a browser window, or a 1920x1080 capture. */
+  --pad: 7cqw;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; background: var(--stage-deep); color: var(--ink); }
+body { font-family: var(--font-ui); overflow: hidden; }
+
+#deck { position: fixed; inset: 0; }
+
+/* One slide fills the viewport, 16:9, letterboxed rather than stretched. */
+.slide {
+  position: absolute; inset: 0;
+  display: none;
+  container-type: inline-size;
+  background: var(--stage);
+  background-image: repeating-linear-gradient(
+    to bottom, transparent 0 33px, rgba(242,237,225,0.045) 33px 34px);
+  padding: var(--pad);
+  overflow: hidden;
+}
+.slide.current { display: flex; flex-direction: column; justify-content: center; }
+
+.inner { max-width: 78cqw; display: flex; flex-direction: column; gap: 2.4cqw; }
+.slide.has-portrait .inner { max-width: 62cqw; }
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 1.35cqw; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-mute);
+  padding-bottom: 1.1cqw;
+  border-bottom: 1px solid var(--dim);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 400; font-size: 5.2cqw; line-height: 1.08;
+  letter-spacing: -0.012em; color: var(--ink);
+  text-wrap: balance;
+}
+h2 em { font-style: italic; color: var(--accent); }
+.slide.text h2 { font-size: 4.4cqw; }
+.slide:has(.chart) h2 { font-size: 3.2cqw; }
+
+.body {
+  font-size: 1.85cqw; line-height: 1.55; color: var(--ink-soft);
+  max-width: 62cqw;
+}
+.body b { color: var(--accent); font-weight: 600; }
+.body i { font-family: var(--font-display); font-style: italic; font-size: 1.1em; color: var(--ink); }
+
+/* Title slide */
+.slide.title .inner { gap: 3cqw; }
+.slide.title h2 { font-size: 9cqw; line-height: 1.02; }
+.slide.title .body { font-size: 2.2cqw; }
+
+/* A single figure, the size of the room */
+.bignum {
+  font-family: var(--font-mono); font-weight: 500;
+  font-size: 22cqw; line-height: 0.85; color: var(--accent);
+  letter-spacing: -0.03em; font-variant-numeric: tabular-nums;
+}
+.equation {
+  font-family: var(--font-mono); font-size: 4.2cqw; color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.equation b { color: var(--accent); font-weight: 600; }
+
+.chartwrap { width: 100%; }
+.chartwrap.sub { max-width: 58cqw; }
+.chart { width: 100%; height: auto; display: block; max-height: 52cqh; }
+
+/* Portraits reuse the film's treatment: circular, thick bone ring. */
+.portrait {
+  position: absolute; right: var(--pad); top: 50%; transform: translateY(-50%);
+  width: 22cqw; height: 22cqw; border-radius: 50%;
+  border: 0.45cqw solid var(--ink);
+  overflow: hidden; background: var(--raise);
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+
+.pagenum {
+  position: absolute; left: var(--pad); bottom: 3cqh;
+  font-family: var(--font-mono); font-size: 1.15cqw; color: var(--ink-mute);
+  letter-spacing: 0.1em;
+}
+
+/* Where to cut to a film clip. Visible on the slide on purpose: this deck
+   doubles as the edit sheet, and the tag is trivially hidden for a live talk
+   by pressing C. */
+.cuttag {
+  position: absolute; right: var(--pad); bottom: 3cqh;
+  font-family: var(--font-mono); font-size: 1.15cqw; color: var(--ink-mute);
+  letter-spacing: 0.04em;
+}
+.cuttag span {
+  color: var(--stage); background: var(--accent);
+  padding: 0.25cqw 0.6cqw; margin-right: 0.7cqw;
+  font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+}
+body.hide-cuts .cuttag { display: none; }
+
+/* ── Charts ─────────────────────────────────────────────────────────────── */
+/* Projected on a beamer the cloud loses contrast, so it sits brighter here
+   than it does on the film stage. */
+.chart .dots circle { fill: var(--neutral); opacity: 0.62; }
+.chart .axis line, .chart .axisline { stroke: var(--dim); stroke-width: 1; }
+.chart .gridline, .chart .grid line { stroke: var(--dim); stroke-width: 1; opacity: 0.5; }
+.chart .tickline { stroke: var(--ink-mute); stroke-width: 1; }
+.chart .tick {
+  font-family: var(--font-mono); font-size: 15px; fill: var(--ink-mute);
+}
+.chart .axis-label { font-family: var(--font-ui); font-size: 16px; fill: var(--ink-soft); }
+.chart .line-expect { stroke: var(--ink-mute); stroke-width: 2; stroke-dasharray: 7 6; }
+.chart .line-fit { stroke: var(--accent); stroke-width: 3.5; }
+.chart .lab-expect { font-family: var(--font-ui); font-size: 17px; fill: var(--ink-mute); }
+.chart .lab-fit { font-family: var(--font-ui); font-size: 18px; font-weight: 600; fill: var(--accent); }
+
+/* ranked family rows */
+.rows .link { stroke-width: 2.5; }
+.rows .fall .link { stroke: var(--fall); opacity: 0.55; }
+.rows .rise .link { stroke: var(--neutral); opacity: 0.4; }
+.rows .parent { fill: var(--stage); stroke: var(--ink-mute); stroke-width: 1.4; }
+.rows .fall .child { fill: var(--fall); }
+.rows .rise .child { fill: var(--neutral); }
+.rows .rowlab { font-family: var(--font-mono); font-size: 14px; fill: var(--ink-mute); }
+
+/* decay columns */
+.chart .bar { fill: var(--neutral); }
+.chart .bar.fall { fill: var(--fall); }
+.chart .bar.gold { fill: var(--accent); }
+.chart .baseline { stroke: var(--dim); }
+.chart .serieslab { font-family: var(--font-ui); font-size: 22px; font-weight: 600; fill: var(--ink); }
+.chart .serieslab.fall { fill: var(--fall); }
+.chart .serieslab.gold { fill: var(--accent); }
+.chart .seriessub { font-family: var(--font-ui); font-size: 15px; fill: var(--ink-mute); }
+.chart .barval { font-family: var(--font-mono); font-size: 17px; font-weight: 500; fill: var(--ink); }
+.chart .barval.fall { fill: var(--fall); }
+.chart .barval.gold { fill: var(--accent); }
+
+/* Vanderbilt staircase */
+.stair-chart .stair { stroke: var(--dim); stroke-width: 1.6; fill: none; stroke-dasharray: 5 5; }
+.stair-chart .node { fill: var(--ink); }
+.stair-chart .node.gold { fill: var(--accent); }
+.stair-chart .node.fall { fill: var(--fall); }
+.stair-chart .stairname { font-family: var(--font-ui); font-size: 19px; font-weight: 600; fill: var(--ink); }
+.stair-chart .stairname.gold { fill: var(--accent); }
+.stair-chart .stairname.fall { fill: var(--fall); }
+.stair-chart .stairstat { font-family: var(--font-ui); font-size: 14px; fill: var(--ink-mute); }
+.stair-chart .stairz { font-family: var(--font-mono); font-size: 16px; fill: var(--ink-soft); }
+.stair-chart .stairz.gold { fill: var(--accent); }
+.stair-chart .stairz.fall { fill: var(--fall); }
+.stair-chart .stairgen { font-family: var(--font-mono); font-size: 13px; fill: var(--ink-mute); }
+
+/* prediction ruler */
+.chart .marker { stroke-width: 2.5; stroke: var(--ink); }
+.chart .marker.gold { stroke: var(--accent); }
+.chart .marker.fall { stroke: var(--fall); }
+.chart .marker.dashed { stroke: var(--accent); stroke-dasharray: 5 5; }
+.chart .mname { font-family: var(--font-ui); font-size: 19px; font-weight: 600; fill: var(--ink); }
+.chart .mname.gold { fill: var(--accent); }
+.chart .mname.fall { fill: var(--fall); }
+.chart .mstat { font-family: var(--font-mono); font-size: 16px; fill: var(--accent); }
+.chart .pi { stroke: var(--accent); stroke-width: 1.6; opacity: 0.6; }
+.chart .pilab { font-family: var(--font-ui); font-size: 15px; fill: var(--ink-mute); }
+
+/* the 20 / 13 / 7 split */
+.chart .split.fall { fill: var(--fall); }
+.chart .split.rise { fill: var(--neutral); }
+.chart .split.level { fill: var(--dim); }
+.chart .splitn { font-family: var(--font-mono); font-size: 24px; font-weight: 600; fill: var(--ink); }
+.chart .splitn.fall { fill: var(--fall); }
+.chart .splitlab { font-family: var(--font-ui); font-size: 17px; fill: var(--ink-soft); }
+
+/* ── Chrome ─────────────────────────────────────────────────────────────── */
+#hud {
+  position: fixed; right: 1.4rem; bottom: 1rem; z-index: 10;
+  display: flex; gap: 1.2rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-mute);
+  opacity: 0.5; transition: opacity 0.3s;
+}
+#hud:hover { opacity: 1; }
+#hud .hint { font-size: 0.66rem; }
+body.presenting #hud { opacity: 0; }
+/* Clean capture: the HUD sits in the same corner as the cut tag, so it has to
+   go entirely rather than fade. */
+body.exporting #hud, body.exporting #notes { display: none; }
+body.presenting #hud:hover { opacity: 0.6; }
+
+#notes {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  max-height: 38vh; overflow-y: auto;
+  background: var(--stage-deep); border-top: 2px solid var(--accent);
+  padding: 1.4rem 2rem;
+  font-size: 1.05rem; line-height: 1.6; color: var(--ink-soft);
+}
+#notes[hidden] { display: none; }
+#notes .cue {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.72rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--stage); background: var(--accent);
+  padding: 0.15rem 0.5rem; margin-bottom: 0.7rem;
+}
+
+/* Grid overview */
+body.grid #deck {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+  padding: 10px; overflow-y: auto; inset: 0; position: fixed;
+}
+body.grid .slide {
+  display: flex !important; position: relative; inset: auto;
+  aspect-ratio: 16 / 9; padding: 3cqw; cursor: pointer;
+  border: 2px solid transparent;
+}
+body.grid .slide.current { border-color: var(--accent); }
+body.grid .cuttag, body.grid .portrait { display: none; }
+
+@media print {
+  body { overflow: visible; }
+  #hud, #notes { display: none; }
+  .slide { display: flex !important; position: relative; inset: auto;
+    width: 100%; aspect-ratio: 16/9; page-break-after: always; }
+}
